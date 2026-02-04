@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+	--color-braj-orange: #e85d04;
+	--color-braj-orange-light: #f48c06;
+	--color-braj-yellow: #ffba08;
+	--color-braj-blue: #1d3557;
+	--color-braj-green: #2d6a4f;
+	--color-braj-red: #d00000;
+	--color-braj-cream: #fefae0;
+	--color-braj-sand: #f5e6d3;
+}

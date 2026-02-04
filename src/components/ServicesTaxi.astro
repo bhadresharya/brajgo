@@ -1,0 +1,54 @@
+---
+const services = [
+	'Mathura Vrindavan sightseeing tours',
+	'Agra & Taj Mahal tours',
+	'Delhi to Mathura / Vrindavan / Agra packages',
+	'Point-to-point taxi (Mathura, Vrindavan, Agra, Delhi)',
+	'Tempo Traveller & bus for groups',
+];
+const whyUs = [
+	'Local expertise in Braj region',
+	'Fixed, transparent pricing',
+	'Experienced drivers',
+	'On-time pickup and drop',
+];
+---
+
+<section id="taxi" class="scroll-mt-20 border-t border-braj-sand bg-braj-cream py-14 sm:py-20">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
+			<div>
+				<h2 class="font-serif text-2xl font-semibold text-braj-blue">Our services</h2>
+				<ul class="mt-4 space-y-2 text-braj-blue/90">
+					{services.map((s) => (
+						<li class="flex items-start gap-2">
+							<span class="text-braj-green mt-0.5">•</span>
+							<span>{s}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+			<div>
+				<h2 class="font-serif text-2xl font-semibold text-braj-blue">Why choose us</h2>
+				<p class="mt-2 font-medium text-braj-blue/90">Mathura Taxi</p>
+				<p class="mt-2 text-sm text-braj-blue/80">
+					We offer taxi services in Mathura and Vrindavan for local sightseeing, outstation trips, and Delhi transfers. Well-maintained cars and experienced drivers for a comfortable journey.
+				</p>
+				<ul class="mt-4 space-y-2 text-braj-blue/90">
+					{whyUs.map((w) => (
+						<li class="flex items-start gap-2">
+							<span class="text-braj-green mt-0.5">•</span>
+							<span>{w}</span>
+						</li>
+					))}
+				</ul>
+				<a
+					href="tel:9228597072"
+					class="mt-6 inline-block rounded-lg bg-braj-green px-6 py-3 font-semibold text-white transition hover:bg-braj-green/90"
+				>
+					Book now
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

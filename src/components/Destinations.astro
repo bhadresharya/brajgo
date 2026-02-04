@@ -1,0 +1,44 @@
+---
+const destinations = [
+	{ name: 'Prem Mandir (Vrindavan)', slug: 'prem-mandir', color: 'bg-braj-orange' },
+	{ name: 'Dwarkadhish Mandir (Mathura)', slug: 'dwarkadhish', color: 'bg-braj-yellow' },
+	{ name: 'Shri Krishna Janmabhoomi (Mathura)', slug: 'janmabhoomi', color: 'bg-braj-orange' },
+	{ name: 'Kirti Mandir (Barsana)', slug: 'kirti-mandir', color: 'bg-braj-orange' },
+	{ name: 'Taj Mahal (Agra)', slug: 'taj-mahal', color: 'bg-braj-orange' },
+	{ name: 'Lal Kila (Agra)', slug: 'lal-kila', color: 'bg-braj-blue' },
+];
+---
+
+<section id="destinations" class="scroll-mt-20 border-t border-braj-sand bg-braj-cream py-14 sm:py-20">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<h2 class="text-center font-serif text-2xl font-semibold text-braj-blue sm:text-3xl">
+			Beautiful places in Mathura and Agra
+		</h2>
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{destinations.map((d) => (
+				<div class="group overflow-hidden rounded-xl border border-braj-sand shadow-sm transition hover:shadow-md">
+					<div class={`aspect-[4/3] flex items-center justify-center ${d.color}`}>
+						<span class="font-serif text-4xl text-white/90">{d.name.charAt(0)}</span>
+					</div>
+					<div class="bg-white px-4 py-3">
+						<p class="font-medium text-braj-blue">{d.name}</p>
+						<a
+							href="tel:9228597072"
+							class="mt-2 inline-block text-sm font-semibold text-braj-red hover:underline"
+						>
+							Book now
+						</a>
+					</div>
+				</div>
+			))}
+		</div>
+		<div class="mt-8 flex justify-center">
+			<a
+				href="tel:9228597072"
+				class="rounded-lg bg-braj-blue px-8 py-3 font-semibold text-white transition hover:bg-braj-blue/90"
+			>
+				Book now
+			</a>
+		</div>
+	</div>
+</section>

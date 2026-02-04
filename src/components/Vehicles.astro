@@ -1,0 +1,41 @@
+---
+const vehicles = [
+	{ name: 'Sedan', price: '2500', per: 'Per day' },
+	{ name: 'Ertiga', price: '2700', per: 'Per day' },
+	{ name: 'Innova Crysta', price: '4000', per: 'Per day' },
+	{ name: 'Traveller', price: '6000', per: 'Per day' },
+];
+---
+
+<section id="vehicles" class="scroll-mt-20 border-t border-braj-sand bg-white py-14 sm:py-20">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<h2 class="text-center font-serif text-2xl font-semibold text-braj-blue sm:text-3xl">
+			Vehicle rental
+		</h2>
+		<p class="mx-auto mt-2 max-w-xl text-center text-sm text-braj-blue/80">
+			Transparent per-day rates. Choose the right vehicle for your group.
+		</p>
+		<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{vehicles.map((v) => (
+				<div class="overflow-hidden rounded-xl border border-braj-sand bg-braj-cream/40 text-center transition hover:shadow-md">
+					<div class="aspect-[4/3] flex items-center justify-center bg-braj-sand/50">
+						<span class="text-4xl text-braj-blue/40">🚗</span>
+					</div>
+					<div class="p-4">
+						<h3 class="font-semibold text-braj-blue">{v.name}</h3>
+						<p class="mt-1 text-lg font-semibold text-braj-green">₹{v.price} <span class="text-sm font-normal text-braj-blue/70">{v.per}</span></p>
+						<a href="tel:9228597072" class="mt-3 inline-block text-sm font-semibold text-braj-red hover:underline">Book now</a>
+					</div>
+				</div>
+			))}
+		</div>
+		<div class="mt-8 flex justify-center">
+			<a
+				href="tel:9228597072"
+				class="rounded-lg bg-braj-red px-8 py-3 font-semibold text-white transition hover:bg-braj-red/90"
+			>
+				Book now
+			</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,33 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-braj-sand bg-braj-sand/40">
+	<div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+		<div class="grid gap-8 md:grid-cols-2 md:gap-12">
+			<div>
+				<a href="/" class="mb-4 inline-flex items-center gap-2">
+					<div class="flex h-9 w-9 items-center justify-center rounded-lg bg-braj-green text-white">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+							<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Z" clip-rule="evenodd" />
+						</svg>
+					</div>
+					<span class="font-serif text-lg font-semibold text-braj-blue">BRAJ GO</span>
+				</a>
+				<p class="text-sm text-braj-blue/80">Tour and Travels – Mathura, Vrindavan & Agra.</p>
+			</div>
+			<div>
+				<h3 class="mb-3 font-serif text-lg font-semibold text-braj-blue">Quick links</h3>
+				<ul class="space-y-2 text-sm text-braj-blue/80">
+					<li><a href="#destinations" class="transition hover:text-braj-orange">Destinations</a></li>
+					<li><a href="#packages" class="transition hover:text-braj-orange">Tour packages</a></li>
+					<li><a href="#taxi" class="transition hover:text-braj-orange">Taxi service</a></li>
+					<li><a href="#contact" class="transition hover:text-braj-orange">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="mt-8 border-t border-braj-sand pt-8 text-center text-sm text-braj-blue/60">
+			© {currentYear} Braj Go Tour and Travels. All rights reserved.
+		</div>
+	</div>
+</footer>
