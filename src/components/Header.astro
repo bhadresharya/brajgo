@@ -1,35 +1,41 @@
 ---
+interface Props {
+	currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
 const navLinks = [
-	{ href: '#destinations', label: 'Destinations' },
-	{ href: '#packages', label: 'Packages' },
-	{ href: '#taxi', label: 'Taxi' },
-	{ href: '#vehicles', label: 'Vehicles' },
-	{ href: '#contact', label: 'Contact' },
+	{ href: '/', label: 'Home' },
+	{ href: '/about', label: 'About' },
+	{ href: '/services', label: 'Services' },
+	{ href: '/contact', label: 'Contact' },
 ];
+
+function isActive(href: string) {
+	if (href === '/') return currentPath === '/';
+	return currentPath.startsWith(href);
+}
+
+// On inner pages header has dark text on mint; on home it's over hero (white text)
+const isHome = currentPath === '/';
 ---
 
-<header class="sticky top-0 z-50 border-b border-braj-sand/60 bg-braj-cream/95 backdrop-blur-sm">
-	<div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-		<a href="/" class="flex items-center gap-2">
-			<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-braj-green text-white" aria-hidden="true">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
-					<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12 6a.75.75 0 0 1 .75.75v2.25H15a.75.75 0 0 1 0 1.5h-2.25V15a.75.75 0 0 1-1.5 0v-4.5H9a.75.75 0 0 1 0-1.5h2.25V6.75A.75.75 0 0 1 12 6Z" clip-rule="evenodd" />
-				</svg>
-			</div>
-			<span class="font-serif text-xl font-semibold text-braj-blue">BRAJ GO</span>
-		</a>
-		<nav class="hidden items-center gap-6 md:flex" aria-label="Main">
+<header class={`fixed left-0 right-0 top-0 z-50 px-4 py-5 sm:px-8 ${isHome ? '' : 'bg-mint/95 backdrop-blur-sm'}`}>
+	<div class="mx-auto flex max-w-6xl items-center justify-between">
+		<a href="/" class="text-xl font-bold drop-shadow-sm {isHome ? 'text-white' : 'text-dark'}">Braj<span class="text-accent-teal">Go</span></a>
+		<nav class="hidden items-center gap-8 md:flex" aria-label="Main">
 			{navLinks.map((link) => (
-				<a href={link.href} class="text-sm font-medium text-braj-blue/80 transition hover:text-braj-orange">
+				<a
+					href={link.href}
+					class={`text-sm font-medium transition ${isHome ? 'text-white/90 hover:text-white' : 'text-sage hover:text-dark'} ${isActive(link.href) ? (isHome ? 'text-white' : 'text-accent-teal font-semibold') : ''}`}
+				>
 					{link.label}
 				</a>
 			))}
 		</nav>
-		<a
-			href="tel:9228597072"
-			class="rounded-lg bg-braj-blue px-4 py-2 text-sm font-semibold text-white transition hover:bg-braj-blue/90"
-		>
-			Call to Book
+		<a href="tel:9228597072" class="rounded-full bg-accent-teal px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90">
+			Book now
 		</a>
 	</div>
 </header>

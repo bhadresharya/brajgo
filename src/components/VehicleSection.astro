@@ -1,0 +1,41 @@
+---
+const vehicles = [
+	{ name: 'Sedan', price: '2500', image: null },
+	{ name: 'Ertiga', price: '2700', image: '/images/ertiga.png' },
+	{ name: 'Innova Crysta', price: '4000', image: '/images/innova-crysta.png' },
+	{ name: 'Traveller', price: '6000', image: '/images/traveller.png' },
+];
+---
+
+<section id="vehicles" class="scroll-mt-24 bg-mint px-4 py-20 sm:px-8">
+	<div class="mx-auto max-w-6xl">
+		<div class="text-center">
+			<p class="text-accent-teal text-sm font-medium uppercase tracking-widest">Our fleet</p>
+			<h2 class="mt-2 text-3xl font-bold text-dark sm:text-4xl">Vehicle rental</h2>
+			<p class="mx-auto mt-3 max-w-xl text-sage">Choose the right vehicle for your group. Transparent per-day rates.</p>
+		</div>
+		<div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+			{vehicles.map((v) => (
+				<a href="tel:9228597072" class="group overflow-hidden rounded-2xl border border-teal/20 bg-white shadow-sm transition hover:shadow-lg">
+					<div class="aspect-[4/3] overflow-hidden bg-dark">
+						{v.image ? (
+							<img src={v.image} alt={v.name} class="h-full w-full object-contain object-center transition group-hover:scale-105" />
+						) : (
+							<div class="flex h-full w-full items-center justify-center bg-navy/90">
+								<svg class="h-20 w-20 text-mint/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+							</div>
+						)}
+					</div>
+					<div class="p-5">
+						<h3 class="text-xl font-semibold text-dark">{v.name}</h3>
+						<p class="mt-2 font-semibold text-accent-teal">₹{v.price} <span class="text-sm font-normal text-sage">Per day</span></p>
+						<span class="mt-4 inline-block text-sm font-semibold text-accent-teal group-hover:underline">Book now →</span>
+					</div>
+				</a>
+			))}
+		</div>
+		<div class="mt-12 text-center">
+			<a href="tel:9228597072" class="inline-block rounded-full bg-accent-teal px-8 py-3 font-semibold text-white transition hover:opacity-90">Book now</a>
+		</div>
+	</div>
+</section>

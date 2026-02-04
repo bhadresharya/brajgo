@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+---
+
+<BaseLayout
+	title="Services | Braj Go Tour and Travels"
+	description="Tours, taxi, Tempo Traveller and bus hire in Mathura, Vrindavan & Agra. Book from Delhi."
+	currentPath="/services"
+>
+	<main>
+		<PageTitle
+			title="Our services"
+			description="Tours, taxi, and transport for Mathura, Vrindavan & Agra."
+		/>
+		<section class="mx-auto max-w-6xl px-4 py-16 sm:px-8">
+			<div class="grid gap-10 md:grid-cols-2">
+				<div class="rounded-2xl border border-teal/30 bg-white/60 p-8">
+					<h2 class="text-xl font-semibold text-dark">Tour packages</h2>
+					<p class="mt-3 text-sage">
+						Same-day and multi-day tours from Delhi or Mathura. Mathura Vrindavan sightseeing, Agra & Taj Mahal, Braj circuit. Custom itineraries and fixed pricing by vehicle (Sedan, Ertiga, Innova, Traveller).
+					</p>
+					<a href="tel:9228597072" class="mt-4 inline-block font-semibold text-accent-teal hover:underline">Enquire now →</a>
+				</div>
+				<div class="rounded-2xl border border-teal/30 bg-white/60 p-8">
+					<h2 class="text-xl font-semibold text-dark">Taxi service</h2>
+					<p class="mt-3 text-sage">
+						Local and outstation taxi in Mathura, Vrindavan & Agra. Delhi–Mathura, Delhi–Vrindavan, Mathura–Agra, and other routes. Per-day hire or point-to-point. AC cars and experienced drivers.
+					</p>
+					<a href="tel:9228597072" class="mt-4 inline-block font-semibold text-accent-teal hover:underline">Book taxi →</a>
+				</div>
+				<div class="rounded-2xl border border-teal/30 bg-white/60 p-8">
+					<h2 class="text-xl font-semibold text-dark">Tempo Traveller & bus</h2>
+					<p class="mt-3 text-sage">
+						Group travel with Tempo Traveller and bus hire. Comfortable seating, AC, ideal for pilgrim groups and families. Same transparent pricing and reliable service.
+					</p>
+					<a href="tel:9228597072" class="mt-4 inline-block font-semibold text-accent-teal hover:underline">Enquire →</a>
+				</div>
+				<div class="rounded-2xl border border-teal/30 bg-white/60 p-8">
+					<h2 class="text-xl font-semibold text-dark">Vehicle options</h2>
+					<p class="mt-3 text-sage">
+						Sedan (₹2,500/day), Ertiga (₹2,700/day), Innova Crysta (₹4,000/day), Traveller (₹6,000/day). All rates transparent; choose what fits your group and budget.
+					</p>
+					<a href="tel:9228597072" class="mt-4 inline-block font-semibold text-accent-teal hover:underline">Book now →</a>
+				</div>
+			</div>
+			<div class="mt-14 text-center">
+				<a href="/contact" class="inline-block rounded-full bg-accent-teal px-8 py-3 font-semibold text-white transition hover:opacity-90">Contact us</a>
+			</div>
+		</section>
+	</main>
+</BaseLayout>

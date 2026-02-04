@@ -2,7 +2,7 @@
 const mobile = ['9228597072', '9413211264'];
 const whatsapp = ['9312301972', '9433211264'];
 const address = 'Gopal Puram, Mathura, Uttar Pradesh';
-// Update with full address when you have it
+const email = 'info@brajgotours.com'; // Update with your email
 ---
 
 <section id="contact" class="scroll-mt-20 border-t border-braj-sand bg-braj-cream py-14 sm:py-20">
@@ -22,6 +22,10 @@ const address = 'Gopal Puram, Mathura, Uttar Pradesh';
 					<div>
 						<dt class="text-sm font-medium text-braj-blue/70">Address</dt>
 						<dd>{address}</dd>
+					</div>
+					<div>
+						<dt class="text-sm font-medium text-braj-blue/70">Email</dt>
+						<dd><a href={`mailto:${email}`} class="hover:text-braj-orange">{email}</a></dd>
 					</div>
 					<div>
 						<dt class="text-sm font-medium text-braj-blue/70">Mobile</dt>

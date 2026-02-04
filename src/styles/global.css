@@ -2,13 +2,13 @@
 
 @theme {
 	--font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-	--font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
-	--color-braj-orange: #e85d04;
-	--color-braj-orange-light: #f48c06;
-	--color-braj-yellow: #ffba08;
-	--color-braj-blue: #1d3557;
-	--color-braj-green: #2d6a4f;
-	--color-braj-red: #d00000;
-	--color-braj-cream: #fefae0;
-	--color-braj-sand: #f5e6d3;
+
+	/* Creative Travel Design palette (Dribbble 10474951) */
+	--color-dark: #041117;
+	--color-deep-green: #125a53;
+	--color-navy: #142d4f;
+	--color-teal: #507e7a;
+	--color-sage: #53594e;
+	--color-mint: #c2d2cf;
+	--color-accent-teal: #59abae;
 }

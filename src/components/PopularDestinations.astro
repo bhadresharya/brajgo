@@ -1,0 +1,37 @@
+---
+const destinations = [
+	{ name: 'Mathura', price: '₹4,999 starting', rating: 4.8, imageId: 'mathura' },
+	{ name: 'Vrindavan', price: '₹5,999 starting', rating: 4.9, imageId: 'vrindavan' },
+	{ name: 'Agra', price: '₹6,499 starting', rating: 5.0, imageId: 'agra' },
+	{ name: 'Braj Circuit', price: '₹12,999 starting', rating: 4.9, imageId: 'braj' },
+];
+---
+
+<section id="packages" class="scroll-mt-20 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+	<div class="flex items-center justify-between">
+		<h2 class="text-2xl font-bold text-primary sm:text-3xl">Popular Destinations</h2>
+		<div class="flex gap-2">
+			<button type="button" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-muted transition hover:bg-bg-subtle" aria-label="Previous">
+				<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+			</button>
+			<button type="button" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-muted transition hover:bg-bg-subtle" aria-label="Next">
+				<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+			</button>
+		</div>
+	</div>
+	<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+		{destinations.map((d) => (
+			<a href="#packages" class="group overflow-hidden rounded-xl border border-border bg-white shadow-sm transition hover:shadow-md">
+				<img src={`https://picsum.photos/seed/${d.imageId}/400/300`} alt={d.name} class="aspect-[4/3] w-full object-cover" width="400" height="300" />
+				<div class="p-4">
+					<h3 class="font-semibold text-primary group-hover:text-accent">{d.name}</h3>
+					<p class="mt-1 text-sm text-muted">{d.price}</p>
+					<p class="mt-1 flex items-center gap-1 text-sm text-muted">
+						<svg class="h-4 w-4 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						{d.rating}
+					</p>
+				</div>
+			</a>
+		))}
+	</div>
+</section>

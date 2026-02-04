@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+---
+
+<BaseLayout
+	title="About | Braj Go Tour and Travels"
+	description="Learn about Braj Go – your trusted partner for smooth travels in Mathura, Vrindavan & Agra."
+	currentPath="/about"
+>
+	<main>
+		<PageTitle
+			title="About us"
+			description="Your trusted partner for tours and taxi in the land of Krishna."
+		/>
+		<section class="mx-auto max-w-6xl px-4 py-16 sm:px-8">
+			<div class="prose prose-sage max-w-3xl">
+				<h2 class="text-xl font-semibold text-dark">Who we are</h2>
+				<p class="mt-4 text-sage">
+					Braj Go Tour and Travels is based in Mathura and Agra. We offer seamless tours and taxi services across the Braj region—Mathura, Vrindavan, Agra—so you can focus on the divine experience while we take care of the journey.
+				</p>
+				<h2 class="mt-10 text-xl font-semibold text-dark">Our approach</h2>
+				<p class="mt-4 text-sage">
+					We believe travel should be smooth and stress-free. From one-call booking to comfortable AC vehicles and experienced drivers, we handle the details. Whether you need a same-day temple tour, a multi-day pilgrimage, or point-to-point taxi, we’re here to help.
+				</p>
+				<h2 class="mt-10 text-xl font-semibold text-dark">Why choose Braj Go</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2 text-sage">
+					<li>Local expertise in Mathura, Vrindavan & Agra</li>
+					<li>Transparent pricing and reliable service</li>
+					<li>Sedan, Ertiga, Innova, and Traveller options</li>
+					<li>Easy booking via call or WhatsApp</li>
+				</ul>
+			</div>
+			<div class="mt-16">
+				<a href="/contact" class="inline-block rounded-full bg-accent-teal px-8 py-3 font-semibold text-white transition hover:opacity-90">Get in touch</a>
+			</div>
+		</section>
+	</main>
+</BaseLayout>

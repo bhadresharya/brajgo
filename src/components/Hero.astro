@@ -1,27 +1,28 @@
 ---
-// Placeholder: replace with your banner image in public/
-const bannerSrc = '/images/hero-banner.jpg';
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-braj-sand to-braj-cream">
-	<div class="mx-auto max-w-6xl px-4 pt-10 pb-14 sm:px-6 sm:pt-14 sm:pb-20">
-		<div class="text-center">
-			<p class="font-serif text-2xl text-braj-blue sm:text-3xl">We are based in Mathura and Agra</p>
-			<p class="mt-2 max-w-xl mx-auto text-braj-blue/80">
-				Your trusted partner for tours and taxi services in the Braj region. Explore temples, heritage sites, and the Taj with comfort and care.
-			</p>
-			<a
-				href="#destinations"
-				class="mt-6 inline-block rounded-lg bg-braj-blue px-6 py-3 font-semibold text-white shadow-md transition hover:bg-braj-blue/90"
-			>
-				Explore now
+<section class="relative min-h-[85vh] overflow-hidden bg-dark">
+	<div class="absolute inset-0">
+		<img src="/images/width-800.png" alt="" class="h-full w-full object-cover opacity-40" />
+		<div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/50 to-dark" />
+	</div>
+	<div class="relative z-10 mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-4 pt-24 pb-20 sm:px-8">
+		<p class="text-accent-teal text-sm font-medium uppercase tracking-widest">Mathura · Vrindavan · Agra</p>
+		<h1 class="mt-4 max-w-2xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+			Experience smooth travels in the land of Krishna
+		</h1>
+		<p class="mt-6 max-w-xl text-lg text-white/85">
+			Seamless tours and taxi services. We take care of the journey so you can focus on the divine.
+		</p>
+		<div class="mt-10 flex flex-wrap gap-4">
+			<a href="#destinations" class="rounded-full bg-accent-teal px-8 py-4 font-semibold text-white transition hover:opacity-90">
+				Explore tours
+			</a>
+			<a href="tel:9228597072" class="rounded-full border-2 border-white/60 px-8 py-4 font-semibold text-white transition hover:bg-white/10">
+				Call to book
 			</a>
 		</div>
-		<div class="mt-10 overflow-hidden rounded-2xl border border-braj-sand bg-braj-sand/50 shadow-lg">
-			<div class="aspect-[21/9] min-h-[200px] bg-gradient-to-r from-braj-green/20 to-braj-orange/20 flex items-center justify-center">
-				<!-- Replace with <img src={bannerSrc} alt="Braj Go Tour and Travels" class="h-full w-full object-cover" /> when you add public/images/hero-banner.jpg -->
-				<span class="font-serif text-braj-blue/50 text-lg">Your tour banner image</span>
-			</div>
-		</div>
 	</div>
+	<!-- Curved bottom edge for smooth transition to next section -->
+	<div class="absolute bottom-0 left-0 right-0 h-16 bg-mint rounded-t-[4rem] sm:h-20 sm:rounded-t-[5rem]" aria-hidden="true"></div>
 </section>

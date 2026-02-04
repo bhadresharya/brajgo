@@ -1,30 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
+import SmoothExperience from '../components/SmoothExperience.astro';
 import Destinations from '../components/Destinations.astro';
-import OtherDestinations from '../components/OtherDestinations.astro';
-import ServicesTaxi from '../components/ServicesTaxi.astro';
-import Vehicles from '../components/Vehicles.astro';
-import TourPackage from '../components/TourPackage.astro';
-import TaxiService from '../components/TaxiService.astro';
-import Contact from '../components/Contact.astro';
+import VehicleSection from '../components/VehicleSection.astro';
+import OfferCard from '../components/OfferCard.astro';
+import CTA from '../components/CTA.astro';
 ---
 
-<BaseLayout title="Braj Go Tour and Travels | Mathura, Vrindavan & Agra Tours & Taxi" description="Tours and taxi in Mathura, Vrindavan and Agra. Book packages from Delhi. Prem Mandir, Taj Mahal, Krishna Janmabhoomi. Sedan, Ertiga, Innova, Traveller.">
-	<Header />
+<BaseLayout
+	title="Braj Go – Smooth travels in Mathura, Vrindavan & Agra"
+	description="Experience seamless tours and taxi in the land of Krishna. Book from Delhi."
+	currentPath="/"
+>
 	<main>
 		<Hero />
-		<Features />
+		<SmoothExperience />
 		<Destinations />
-		<OtherDestinations />
-		<ServicesTaxi />
-		<Vehicles />
-		<TourPackage />
-		<TaxiService />
-		<Contact />
+		<VehicleSection />
+		<OfferCard />
+		<CTA />
 	</main>
-	<Footer />
 </BaseLayout>

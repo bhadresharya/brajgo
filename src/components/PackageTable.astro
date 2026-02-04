@@ -1,0 +1,40 @@
+---
+const rows = [
+	{ package: 'Mathura Vrindavan Local Sightseeing', destination: 'Delhi – Mathura', duration: 'Same day', price: '₹4,999' },
+	{ package: 'Vrindavan Local Sightseeing', destination: 'Vrindavan', duration: 'Same day', price: '₹5,999' },
+	{ package: '1 Day Delhi to Mathura Tour', destination: 'Mathura', duration: 'Same day', price: '₹8,499' },
+	{ package: 'Same Day Agra Mathura Vrindavan', destination: 'Agra – Mathura', duration: 'Same day', price: '₹7,499' },
+	{ package: '2 Days Mathura Vrindavan Tour', destination: 'Mathura – Vrindavan', duration: '2D/1N', price: '₹12,999' },
+];
+---
+
+<section class="border-t border-braj-sand bg-white py-12 sm:py-16">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<h2 class="font-serif text-xl font-semibold text-braj-blue sm:text-2xl">
+			Compare Packages: Price & Duration
+		</h2>
+		<div class="mt-6 overflow-x-auto rounded-xl border border-braj-sand">
+			<table class="w-full min-w-[500px] text-left text-sm">
+				<thead>
+					<tr class="border-b border-braj-sand bg-braj-sand/50">
+						<th class="p-3 font-semibold text-braj-blue">Tour Package</th>
+						<th class="p-3 font-semibold text-braj-blue">Destination</th>
+						<th class="p-3 font-semibold text-braj-blue">Duration</th>
+						<th class="p-3 font-semibold text-braj-blue">Est. Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{rows.map((row) => (
+						<tr class="border-b border-braj-sand/70 last:border-0">
+							<td class="p-3 text-braj-blue/90">{row.package}</td>
+							<td class="p-3 text-braj-blue/80">{row.destination}</td>
+							<td class="p-3 text-braj-blue/80">{row.duration}</td>
+							<td class="p-3 font-medium text-braj-green">{row.price}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+		<p class="mt-3 text-xs text-braj-blue/60">* Prices may vary by vehicle (Sedan / Ertiga / Innova / Traveller). Call for exact quote.</p>
+	</div>
+</section>

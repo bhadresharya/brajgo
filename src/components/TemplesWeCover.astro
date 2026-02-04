@@ -1,0 +1,27 @@
+---
+// Temples list inspired by Braj Bhoomi
+const temples = [
+	'Banke Bihari Temple', 'Dwarkadhish Temple', 'Prem Mandir', 'Shri Krishna Janmabhoomi',
+	'Govind Dev Ji Temple', 'Radha Raman Temple', 'Nidhivan', 'Rangji Temple',
+	'Kirti Mandir (Barsana)', 'Govardhan Hill', 'Taj Mahal (Agra)', 'Lal Kila (Agra)',
+];
+---
+
+<section class="border-t border-braj-sand bg-white py-12 sm:py-16">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<h2 class="font-serif text-xl font-semibold text-braj-blue sm:text-2xl">
+			Temples We Cover
+		</h2>
+		<p class="mt-2 text-sm text-braj-blue/80">
+			Our tours include these and more. Ask us for a custom itinerary.
+		</p>
+		<ul class="mt-6 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+			{temples.map((t) => (
+				<li class="flex items-center gap-2 text-braj-blue/90">
+					<span class="text-braj-green">·</span>
+					<span>{t}</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>
