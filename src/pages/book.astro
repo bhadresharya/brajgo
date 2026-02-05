@@ -143,29 +143,109 @@ const whyChooseUs = [
 			</div>
 		</section>
 
-		<!-- SECTION 2: Problem / Pain Points -->
-		<section class="bg-mint py-12 sm:py-16">
-			<div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
-				<h2 class="text-2xl font-bold text-dark sm:text-3xl">
-					Planning a Trip to Braj?
-				</h2>
-				<p class="mx-auto mt-4 max-w-2xl text-sage">
-					Don't stress about unreliable taxis, confusing routes, or overpriced tours. 
-					<strong class="text-dark">We've got you covered.</strong>
-				</p>
+		<!-- SECTION 2: Our Services -->
+		<section class="relative overflow-hidden bg-gradient-to-b from-mint to-white py-16 sm:py-20 lg:py-24">
+			<!-- Decorative background -->
+			<div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"30\" cy=\"30\" r=\"1.5\" fill=\"%23507e7a\"/></svg>');"></div>
+			
+			<div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+				<!-- Header -->
+				<div class="text-center">
+					<span class="inline-block rounded-full bg-accent-teal/10 px-4 py-1.5 text-sm font-semibold text-accent-teal">
+						Our Services
+					</span>
+					<h2 class="mt-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl">
+						Everything You Need for Your Trip
+					</h2>
+					<p class="mx-auto mt-4 max-w-2xl text-lg text-sage">
+						From flights to hotels, we handle it all so you can focus on your journey.
+					</p>
+				</div>
 
-				<div class="mt-10 grid gap-4 sm:grid-cols-3">
-					<div class="rounded-xl bg-white p-6 shadow-sm">
-						<div class="text-3xl">😰</div>
-						<p class="mt-3 text-sm text-sage">No more haggling with local taxi drivers</p>
+				<!-- Services cards -->
+				<div class="mt-12 grid gap-6 grid-cols-2 lg:grid-cols-4">
+					<!-- Flight Booking -->
+					<div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+						<!-- Image -->
+						<div class="relative h-40 sm:h-44 overflow-hidden">
+							<img src="https://picsum.photos/seed/flight-booking/400/250" alt="Flight Booking" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" />
+							<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+						</div>
+						<!-- Content -->
+						<div class="relative p-6 pt-2 text-center">
+							<div class="absolute -top-8 left-1/2 -translate-x-1/2">
+								<div class="flex h-16 w-16 items-center justify-center rounded-xl bg-blue-500 text-white shadow-lg shadow-blue-500/30">
+									<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+									</svg>
+								</div>
+							</div>
+							<h3 class="mt-8 text-xl font-bold text-dark">Flight Booking</h3>
+							<p class="mt-2 text-base text-sage">Best deals on domestic & international flights</p>
+						</div>
 					</div>
-					<div class="rounded-xl bg-white p-6 shadow-sm">
-						<div class="text-3xl">🗺️</div>
-						<p class="mt-3 text-sm text-sage">No confusion about which temples to visit</p>
+
+					<!-- Tours & Activities -->
+					<div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+						<!-- Image -->
+						<div class="relative h-40 sm:h-44 overflow-hidden">
+							<img src="https://picsum.photos/seed/temple-tour/400/250" alt="Tours & Activities" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" />
+							<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+						</div>
+						<!-- Content -->
+						<div class="relative p-6 pt-2 text-center">
+							<div class="absolute -top-8 left-1/2 -translate-x-1/2">
+								<div class="flex h-16 w-16 items-center justify-center rounded-xl bg-amber-500 text-white shadow-lg shadow-amber-500/30">
+									<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+									</svg>
+								</div>
+							</div>
+							<h3 class="mt-8 text-xl font-bold text-dark">Tours & Activities</h3>
+							<p class="mt-2 text-base text-sage">Guided temple tours & sightseeing packages</p>
+						</div>
 					</div>
-					<div class="rounded-xl bg-white p-6 shadow-sm">
-						<div class="text-3xl">💸</div>
-						<p class="mt-3 text-sm text-sage">No hidden charges or last-minute surprises</p>
+
+					<!-- Airport Transfers -->
+					<div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+						<!-- Image -->
+						<div class="relative h-40 sm:h-44 overflow-hidden">
+							<img src="https://picsum.photos/seed/airport-transfer/400/250" alt="Airport Transfers" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" />
+							<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+						</div>
+						<!-- Content -->
+						<div class="relative p-6 pt-2 text-center">
+							<div class="absolute -top-8 left-1/2 -translate-x-1/2">
+								<div class="flex h-16 w-16 items-center justify-center rounded-xl bg-green-500 text-white shadow-lg shadow-green-500/30">
+									<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+									</svg>
+								</div>
+							</div>
+							<h3 class="mt-8 text-xl font-bold text-dark">Airport Transfers</h3>
+							<p class="mt-2 text-base text-sage">Reliable pickup & drop from Delhi, Agra airports</p>
+						</div>
+					</div>
+
+					<!-- Hotel Bookings -->
+					<div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+						<!-- Image -->
+						<div class="relative h-40 sm:h-44 overflow-hidden">
+							<img src="https://picsum.photos/seed/hotel-room/400/250" alt="Hotel Bookings" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" />
+							<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+						</div>
+						<!-- Content -->
+						<div class="relative p-6 pt-2 text-center">
+							<div class="absolute -top-8 left-1/2 -translate-x-1/2">
+								<div class="flex h-16 w-16 items-center justify-center rounded-xl bg-purple-500 text-white shadow-lg shadow-purple-500/30">
+									<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+									</svg>
+								</div>
+							</div>
+							<h3 class="mt-8 text-xl font-bold text-dark">Hotel Bookings</h3>
+							<p class="mt-2 text-base text-sage">Budget to luxury stays in Mathura & Vrindavan</p>
+						</div>
 					</div>
 				</div>
 			</div>
