@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+@source "../pages/**/*.astro";
+@source "../components/**/*.astro";
+@source "../layouts/**/*.astro";
+
 @theme {
 	--font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 
@@ -12,6 +16,27 @@
 	--color-mint: #c2d2cf;
 	--color-accent-teal: #59abae;
 	--color-white: #ffffff;
+
+	/* Spacing - ensure margin/padding utilities work */
+	--spacing-0: 0px;
+	--spacing-1: 0.25rem;
+	--spacing-2: 0.5rem;
+	--spacing-3: 0.75rem;
+	--spacing-4: 1rem;
+	--spacing-5: 1.25rem;
+	--spacing-6: 1.5rem;
+	--spacing-7: 1.75rem;
+	--spacing-8: 2rem;
+	--spacing-9: 2.25rem;
+	--spacing-10: 2.5rem;
+	--spacing-11: 2.75rem;
+	--spacing-12: 3rem;
+	--spacing-14: 3.5rem;
+	--spacing-16: 4rem;
+	--spacing-20: 5rem;
+	--spacing-24: 6rem;
+	--spacing-28: 7rem;
+	--spacing-32: 8rem;
 }
 
 /* Smooth scroll */
