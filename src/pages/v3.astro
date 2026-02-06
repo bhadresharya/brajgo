@@ -1,36 +1,69 @@
 ---
 import '../styles/global.css';
 
-const tourPackages = [
+const tourPackagesFromMathura = [
 	{
 		title: 'Mathura Vrindavan 1 Day Sightseeing Tour',
-		image: 'https://picsum.photos/seed/mathura-1day/400/250',
+		image: 'https://picsum.photos/seed/birla-mandir/400/250',
 		prices: { sedan: '2000', ertiga: '2500', innova: '3000', traveller: '6000' },
 	},
 	{
 		title: 'Mathura Vrindavan 2 Day Sightseeing Tour',
-		image: 'https://picsum.photos/seed/mathura-2day/400/250',
+		image: 'https://picsum.photos/seed/iskcon-temple/400/250',
 		prices: { sedan: '4500', ertiga: '5000', innova: '6500', traveller: '12000' },
 	},
 	{
 		title: 'Mathura Vrindavan 3 Day Sightseeing Tour',
-		image: 'https://picsum.photos/seed/mathura-3day/400/250',
+		image: 'https://picsum.photos/seed/govardhan/400/250',
 		prices: { sedan: '7000', ertiga: '8000', innova: '9500', traveller: '18000' },
 	},
 	{
-		title: 'Mathura Vrindavan Agra 3 Day Tour',
-		image: 'https://picsum.photos/seed/mathura-agra/400/250',
+		title: 'Mathura Vrindavan Agra 3 Day Sightseeing Tour',
+		image: 'https://picsum.photos/seed/prem-mandir/400/250',
 		prices: { sedan: '7500', ertiga: '8000', innova: '10500', traveller: '18000' },
 	},
 	{
-		title: 'Agra 1 Day Tour from Mathura',
-		image: 'https://picsum.photos/seed/agra-1day/400/250',
+		title: 'Agra 1 Day Sightseeing Tour from Mathura Vrindavan',
+		image: 'https://picsum.photos/seed/taj-mahal/400/250',
 		prices: { sedan: '2500', ertiga: '3000', innova: '4000', traveller: '6000' },
 	},
 	{
-		title: 'Agra Fatehpur Sikri 1 Day Tour',
-		image: 'https://picsum.photos/seed/fatehpur/400/250',
+		title: 'Agra Fatehpur Sikri 1 Day Sightseeing Tour',
+		image: 'https://picsum.photos/seed/fatehpur-sikri/400/250',
 		prices: { sedan: '3500', ertiga: '4000', innova: '5000', traveller: '7500' },
+	},
+];
+
+const tourPackagesFromDelhi = [
+	{
+		title: 'Mathura Vrindavan 1 Day Tour from Delhi',
+		image: 'https://picsum.photos/seed/delhi-mathura-1/400/250',
+		prices: { sedan: '4500', ertiga: '5500', innova: '7000', traveller: '12000' },
+	},
+	{
+		title: 'Mathura Vrindavan 2 Day Tour from Delhi',
+		image: 'https://picsum.photos/seed/delhi-mathura-2/400/250',
+		prices: { sedan: '8000', ertiga: '9000', innova: '11000', traveller: '18000' },
+	},
+	{
+		title: 'Mathura Vrindavan 3 Day Tour from Delhi',
+		image: 'https://picsum.photos/seed/delhi-mathura-3/400/250',
+		prices: { sedan: '11000', ertiga: '12000', innova: '15000', traveller: '24000' },
+	},
+	{
+		title: 'Agra Mathura Vrindavan 1 Day Tour from Delhi',
+		image: 'https://picsum.photos/seed/delhi-agra-mathura-1/400/250',
+		prices: { sedan: '5500', ertiga: '6500', innova: '8000', traveller: '14000' },
+	},
+	{
+		title: 'Agra Mathura Vrindavan 2 Day Tour from Delhi',
+		image: 'https://picsum.photos/seed/delhi-agra-mathura-2/400/250',
+		prices: { sedan: '9000', ertiga: '10000', innova: '12500', traveller: '20000' },
+	},
+	{
+		title: 'Agra Tour from Delhi',
+		image: 'https://picsum.photos/seed/delhi-agra/400/250',
+		prices: { sedan: '4000', ertiga: '5000', innova: '6500', traveller: '10000' },
 	},
 ];
 
@@ -42,14 +75,18 @@ const vehicles = [
 ];
 
 const taxiRoutes = [
-	'Mathura to Delhi Taxi',
-	'Vrindavan to Delhi Taxi',
-	'Delhi to Mathura Taxi',
-	'Delhi to Vrindavan Taxi',
+	'Vrindavan To Delhi Taxi',
+	'Mathura To Delhi Taxi',
+	'Delhi To Vrindavan Taxi',
+	'Delhi To Mathura Taxi',
 	'Mathura to Agra Taxi',
 	'Vrindavan to Agra Taxi',
-	'Agra to Mathura Taxi',
-	'Agra to Vrindavan Taxi',
+	'Agra To Vrindavan Taxi',
+	'Agra To Mathura Taxi',
+	'Mathura to Barsana Taxi',
+	'Vrindavan to Barsana Taxi',
+	'Mathura to Tundla Taxi',
+	'Mathura to Vrindavan Taxi',
 ];
 ---
 
@@ -59,8 +96,8 @@ const taxiRoutes = [
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Taxi Service in Mathura Vrindavan - Book tours and taxi at best rates with Braj Go Tours and Travels" />
-		<title>Tour Packages | Braj Go Tours and Travels</title>
+		<meta name="description" content="Taxi Service in Mathura Vrindavan - Mathura Vrindavan Travels. Book tours and taxi at best rates with Braj Go Tours and Travels" />
+		<title>Taxi Service in Mathura Vrindavan | Braj Go Tours and Travels</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -92,11 +129,45 @@ const taxiRoutes = [
 					</a>
 
 					<!-- Navigation -->
-					<nav class="hidden items-center gap-6 md:flex">
+					<nav class="hidden items-center gap-4 lg:flex">
 						<a href="/" class="text-sm font-medium text-white/90 hover:text-white">Home</a>
-						<a href="/packages" class="text-sm font-medium text-white">Tour Packages</a>
-						<a href="/book" class="text-sm font-medium text-white/90 hover:text-white">Book Now</a>
 						<a href="/contact" class="text-sm font-medium text-white/90 hover:text-white">Contact</a>
+						<a href="/about" class="text-sm font-medium text-white/90 hover:text-white">About us</a>
+						<div class="group relative">
+							<button class="text-sm font-medium text-white/90 hover:text-white">Tour Package from Mathura ▾</button>
+							<div class="absolute left-0 top-full hidden w-64 rounded-lg bg-white py-2 shadow-lg group-hover:block">
+								<a href="#packages-mathura" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan 1 Day Tour</a>
+								<a href="#packages-mathura" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan 2 Day Tour</a>
+								<a href="#packages-mathura" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan 3 Day Tour</a>
+								<a href="#packages-mathura" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan Agra 3 Day Tour</a>
+								<a href="#packages-mathura" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra Tour</a>
+								<a href="#packages-mathura" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra and Fatehpur Sikri tour</a>
+							</div>
+						</div>
+						<div class="group relative">
+							<button class="text-sm font-medium text-white/90 hover:text-white">Tour Package from Delhi ▾</button>
+							<div class="absolute left-0 top-full hidden w-72 rounded-lg bg-white py-2 shadow-lg group-hover:block">
+								<a href="#packages-delhi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan 1 Day Tour from Delhi</a>
+								<a href="#packages-delhi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan 2 Day Tour from Delhi</a>
+								<a href="#packages-delhi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura Vrindavan 3 Day Tour from Delhi</a>
+								<a href="#packages-delhi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra Mathura Vrindavan 1 Day Tour from Delhi</a>
+								<a href="#packages-delhi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra Mathura Vrindavan 2 Day Tour from Delhi</a>
+								<a href="#packages-delhi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra Tour from Delhi</a>
+							</div>
+						</div>
+						<div class="group relative">
+							<button class="text-sm font-medium text-white/90 hover:text-white">Taxi Service ▾</button>
+							<div class="absolute left-0 top-full hidden w-56 rounded-lg bg-white py-2 shadow-lg group-hover:block">
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Vrindavan To Delhi Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura To Delhi Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Delhi To Vrindavan Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Delhi To Mathura Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mathura to Agra Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Vrindavan to Agra Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra To Vrindavan Taxi</a>
+								<a href="#taxi-routes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agra To Mathura Taxi</a>
+							</div>
+						</div>
 					</nav>
 
 					<!-- CTA -->
@@ -121,7 +192,7 @@ const taxiRoutes = [
 			</div>
 			<div class="relative mx-auto max-w-4xl px-4">
 				<h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl">
-					Taxi Service in Mathura and Vrindavan
+					Taxi Service in Mathura and Vrindavan.
 				</h1>
 				<p class="mx-auto mt-4 max-w-2xl text-lg text-white/90">
 					Book Your Taxi in Mathura and Vrindavan with Braj Go Tours and Travels at Very Best Rates And Best Service Guaranteed
@@ -136,28 +207,29 @@ const taxiRoutes = [
 					</svg>
 					CALL NOW FOR BOOKING
 				</a>
+				<div class="mt-8">
+					<img src="https://picsum.photos/seed/passengers-enjoying/600/300" alt="Passengers enjoying Mathura Vrindavan tour" class="mx-auto rounded-xl shadow-2xl" />
+				</div>
 			</div>
 		</section>
 
-		<!-- Tour Packages Section -->
-		<section class="py-12 sm:py-16" style="background-color: var(--bg-light);">
+		<!-- Tour Packages from Mathura Section -->
+		<section id="packages-mathura" class="py-12 sm:py-16" style="background-color: var(--bg-light);">
 			<div class="mx-auto max-w-6xl px-4">
 				<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary-green);">
 					Mathura Vrindavan Sightseeing Packages
 				</h2>
 
 				<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-					{tourPackages.map((pkg) => (
+					{tourPackagesFromMathura.map((pkg) => (
 						<div class="overflow-hidden rounded-xl bg-white shadow-lg transition hover:shadow-xl">
-							<!-- Image -->
 							<div class="relative h-48 overflow-hidden">
 								<img src={pkg.image} alt={pkg.title} class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
 							</div>
-							<!-- Content -->
 							<div class="p-5">
 								<h3 class="text-lg font-bold" style="color: var(--primary-green);">{pkg.title}</h3>
 								<p class="mt-3 text-sm" style="color: var(--text-gray);">
-									<strong>Price:</strong> Sedan – ₹{pkg.prices.sedan} | Ertiga – ₹{pkg.prices.ertiga} | Innova – ₹{pkg.prices.innova} | Traveller – ₹{pkg.prices.traveller}
+									<strong>Price:</strong> Sedan – ₹{pkg.prices.sedan} | Ertiga – ₹{pkg.prices.ertiga} | Innova Crysta – ₹{pkg.prices.innova} | Traveller – ₹{pkg.prices.traveller}
 								</p>
 								<div class="mt-4 flex gap-3">
 									<a 
@@ -186,17 +258,15 @@ const taxiRoutes = [
 		<section class="py-12 sm:py-16" style="background-color: white;">
 			<div class="mx-auto max-w-6xl px-4">
 				<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary-green);">
-					Per Day Taxi Fare in Mathura And Vrindavan
+					See Our Per Day Taxi Fare in Mathura And Vrindavan
 				</h2>
 
 				<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 					{vehicles.map((vehicle) => (
 						<div class="overflow-hidden rounded-xl bg-white shadow-lg transition hover:shadow-xl" style="border: 2px solid var(--primary-green);">
-							<!-- Image -->
 							<div class="flex h-40 items-center justify-center bg-gray-50 p-4">
 								<img src={vehicle.image} alt={vehicle.name} class="h-full w-auto object-contain" />
 							</div>
-							<!-- Content -->
 							<div class="p-5 text-center" style="background-color: var(--primary-green);">
 								<h3 class="text-xl font-bold text-white">{vehicle.name}</h3>
 								<p class="mt-1 text-2xl font-bold text-white">₹{vehicle.price} <span class="text-sm font-normal">Per Day</span></p>
@@ -218,7 +288,6 @@ const taxiRoutes = [
 		<section class="py-12 sm:py-16" style="background-color: var(--bg-light);">
 			<div class="mx-auto max-w-6xl px-4">
 				<div class="grid gap-8 lg:grid-cols-2">
-					<!-- Left Column -->
 					<div>
 						<h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--primary-green);">
 							Taxi Service in Mathura
@@ -240,29 +309,102 @@ const taxiRoutes = [
 						<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
 							We offer taxi services in Vrindavan for local sightseeing, outstation trips, and Vrindavan to Delhi taxi rides. We've got you covered. Sit back, relax, and enjoy a seamless travel experience with Braj Go Tours and Travels.
 						</p>
+
+						<h3 class="mt-8 text-xl font-bold" style="color: var(--primary-green);">
+							Taxi in Mathura
+						</h3>
+						<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
+							Taxi Service in Mathura: Planning a tour of Mathura and Vrindavan, an outstation trip, or in need of a bus or Tempo Traveller? Look no further! Contact us for all your transportation needs. We provide reliable taxi services in Mathura to ensure a seamless travel experience. Reach out to us today for your Mathura-Vrindavan tour or any other travel requirements.
+						</p>
 					</div>
 
-					<!-- Right Column - Taxi Routes -->
 					<div>
-						<h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--primary-green);">
-							Popular Taxi Routes
-						</h2>
-						<div class="mt-6 grid gap-3 sm:grid-cols-2">
-							{taxiRoutes.map((route) => (
-								<a 
-									href="tel:9228597072" 
-									class="flex items-center gap-3 rounded-lg bg-white p-4 shadow transition hover:shadow-md"
-								>
-									<div class="flex h-10 w-10 items-center justify-center rounded-full" style="background-color: var(--primary-green);">
-										<svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-										</svg>
-									</div>
-									<span class="font-medium" style="color: var(--text-dark);">{route}</span>
-								</a>
-							))}
-						</div>
+						<h3 class="text-xl font-bold" style="color: var(--primary-green);">
+							Mathura Travels
+						</h3>
+						<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
+							Mathura Travels: Braj Go Tours and Travels is your go-to travel agency in Mathura, offering a range of transportation options for your convenience. From buses and Tempo Travellers to cars, we cater to all your travel needs for exploring Mathura, Vrindavan, and beyond. Need a taxi for Agra, Jaipur, Delhi, Haridwar, Bharatpur, or Rishikesh? Look no further. Choose Braj Go Tours and Travels for a seamless and enjoyable journey.
+						</p>
+
+						<h3 class="mt-8 text-xl font-bold" style="color: var(--primary-green);">
+							Vrindavan Tour and Travels
+						</h3>
+						<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
+							Vrindavan Tour and Travels: Explore the spiritual wonders of Vrindavan, Mathura, Nandgaon, Barsana, and Govardhan with our top-notch taxi services for sightseeing. Whether you're looking to tour locally or venture outstation, we offer a fleet of buses, cars, and Tempo Travellers to cater to all your travel needs.
+						</p>
+
+						<h3 class="mt-8 text-xl font-bold" style="color: var(--primary-green);">
+							Mathura Taxi
+						</h3>
+						<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
+							We provide reliable taxi services in Mathura for locals and tourists, offering well-maintained vehicles and experienced drivers for safe and comfortable travel around the city and nearby attractions.
+						</p>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Tour Packages from Delhi Section -->
+		<section id="packages-delhi" class="py-12 sm:py-16" style="background-color: white;">
+			<div class="mx-auto max-w-6xl px-4">
+				<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary-green);">
+					Mathura Vrindavan Tour Package from Delhi
+				</h2>
+
+				<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+					{tourPackagesFromDelhi.map((pkg) => (
+						<div class="overflow-hidden rounded-xl bg-white shadow-lg transition hover:shadow-xl">
+							<div class="relative h-48 overflow-hidden">
+								<img src={pkg.image} alt={pkg.title} class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
+							</div>
+							<div class="p-5">
+								<h3 class="text-lg font-bold" style="color: var(--primary-green);">{pkg.title}</h3>
+								<p class="mt-3 text-sm" style="color: var(--text-gray);">
+									<strong>Price:</strong> Sedan – ₹{pkg.prices.sedan} | Ertiga – ₹{pkg.prices.ertiga} | Innova Crysta – ₹{pkg.prices.innova} | Traveller – ₹{pkg.prices.traveller}
+								</p>
+								<div class="mt-4 flex gap-3">
+									<a 
+										href="#" 
+										class="flex-1 rounded-lg py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
+										style="background-color: var(--primary-green);"
+									>
+										View Itinerary
+									</a>
+									<a 
+										href="tel:9228597072" 
+										class="flex-1 rounded-lg py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
+										style="background-color: var(--accent-orange);"
+									>
+										Call Us
+									</a>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Taxi Routes Section -->
+		<section id="taxi-routes" class="py-12 sm:py-16" style="background-color: var(--bg-light);">
+			<div class="mx-auto max-w-6xl px-4">
+				<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary-green);">
+					Taxi Service
+				</h2>
+				<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					{taxiRoutes.map((route) => (
+						<a 
+							href="tel:9228597072" 
+							class="flex items-center gap-3 rounded-lg bg-white p-4 shadow transition hover:shadow-md"
+						>
+							<div class="flex h-10 w-10 items-center justify-center rounded-full" style="background-color: var(--primary-green);">
+								<svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+								</svg>
+							</div>
+							<span class="font-medium" style="color: var(--text-dark);">{route}</span>
+						</a>
+					))}
 				</div>
 			</div>
 		</section>
@@ -320,7 +462,6 @@ const taxiRoutes = [
 		<footer style="background-color: var(--primary-green-dark);" class="py-10 text-white">
 			<div class="mx-auto max-w-6xl px-4">
 				<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-					<!-- Logo & Info -->
 					<div>
 						<img src="/images/logo.png" alt="Braj Go" class="h-12 w-auto" />
 						<p class="mt-4 text-sm text-white/70">
@@ -328,18 +469,18 @@ const taxiRoutes = [
 						</p>
 					</div>
 
-					<!-- Tour Packages -->
 					<div>
 						<h4 class="font-bold">Tour Packages</h4>
 						<ul class="mt-4 space-y-2 text-sm text-white/70">
-							<li><a href="#" class="hover:text-white">Mathura Vrindavan 1 Day Tour</a></li>
-							<li><a href="#" class="hover:text-white">Mathura Vrindavan 2 Day Tour</a></li>
-							<li><a href="#" class="hover:text-white">Mathura Vrindavan 3 Day Tour</a></li>
-							<li><a href="#" class="hover:text-white">Agra 1 Day Tour</a></li>
+							<li><a href="#packages-mathura" class="hover:text-white">Mathura Vrindavan 1 Day Tour</a></li>
+							<li><a href="#packages-mathura" class="hover:text-white">Mathura Vrindavan 2 Day Tour</a></li>
+							<li><a href="#packages-mathura" class="hover:text-white">Mathura Vrindavan 3 Day Tour</a></li>
+							<li><a href="#packages-mathura" class="hover:text-white">Mathura Vrindavan Agra 3 Day Tour</a></li>
+							<li><a href="#packages-mathura" class="hover:text-white">Agra 1 Day Tour</a></li>
+							<li><a href="#packages-mathura" class="hover:text-white">Agra Fatehpur Sikri 1 Day Tour</a></li>
 						</ul>
 					</div>
 
-					<!-- Quick Links -->
 					<div>
 						<h4 class="font-bold">Quick Links</h4>
 						<ul class="mt-4 space-y-2 text-sm text-white/70">
@@ -347,10 +488,11 @@ const taxiRoutes = [
 							<li><a href="/about" class="hover:text-white">About Us</a></li>
 							<li><a href="/contact" class="hover:text-white">Contact</a></li>
 							<li><a href="/book" class="hover:text-white">Book Now</a></li>
+							<li><a href="#taxi-routes" class="hover:text-white">Tempo Traveller in Mathura</a></li>
+							<li><a href="#" class="hover:text-white">Mathura Tour and Travels</a></li>
 						</ul>
 					</div>
 
-					<!-- Contact -->
 					<div>
 						<h4 class="font-bold">Contact Us</h4>
 						<ul class="mt-4 space-y-2 text-sm text-white/70">
@@ -372,6 +514,7 @@ const taxiRoutes = [
 			href="tel:9228597072" 
 			class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition hover:scale-110"
 			style="background-color: var(--accent-orange);"
+			title="Call Now"
 		>
 			<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
