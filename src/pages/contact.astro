@@ -126,7 +126,20 @@ import PageTitle from '../components/PageTitle.astro';
 						Fill out the form below and we'll get back to you as soon as possible.
 					</p>
 
-					<form class="mt-6 space-y-4">
+					<form 
+						action="https://api.web3forms.com/submit" 
+						method="POST"
+						class="mt-6 space-y-4"
+					>
+						<!-- Web3Forms Access Key -->
+						<input type="hidden" name="access_key" value="ac1c5656-f73d-4e06-90aa-a3a74c15e749" />
+						<!-- Email Subject -->
+						<input type="hidden" name="subject" value="New Inquiry from Braj Go Website" />
+						<!-- Redirect after submission -->
+						<input type="hidden" name="redirect" value="/thank-you" />
+						<!-- Honeypot Spam Protection -->
+						<input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
 						<div>
 							<label for="name" class="block text-sm font-medium" style="color: var(--text-dark);">Full Name</label>
 							<input 
@@ -162,12 +175,12 @@ import PageTitle from '../components/PageTitle.astro';
 								style="--tw-ring-color: var(--primary);"
 							>
 								<option value="">Select a service</option>
-								<option value="local-taxi">Local Taxi Service</option>
-								<option value="mathura-tour">Mathura Vrindavan Tour</option>
-								<option value="agra-tour">Agra Tour</option>
-								<option value="delhi-tour">Tour from Delhi</option>
-								<option value="outstation">Outstation Trip</option>
-								<option value="other">Other</option>
+								<option value="Local Taxi Service">Local Taxi Service</option>
+								<option value="Mathura Vrindavan Tour">Mathura Vrindavan Tour</option>
+								<option value="Agra Tour">Agra Tour</option>
+								<option value="Tour from Delhi">Tour from Delhi</option>
+								<option value="Outstation Trip">Outstation Trip</option>
+								<option value="Other">Other</option>
 							</select>
 						</div>
 
