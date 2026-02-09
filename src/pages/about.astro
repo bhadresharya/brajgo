@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import PageTitle from '../components/PageTitle.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout 
@@ -33,7 +35,7 @@ import PageTitle from '../components/PageTitle.astro';
 				</div>
 				<div class="relative">
 					<img 
-						src="/images/prem-mandir.png" 
+						src={`${base}/images/prem-mandir.png`} 
 						alt="Prem Mandir Vrindavan" 
 						class="w-full rounded-2xl shadow-xl"
 					/>

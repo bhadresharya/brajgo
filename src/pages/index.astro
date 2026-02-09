@@ -1,41 +1,43 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const tourPackagesFromMathura = [
 	{
 		title: 'Mathura Vrindavan 1 Day Sightseeing Tour',
-		image: '/images/birla-mandir.png',
-		href: '/tours/mathura-vrindavan-1-day',
+		image: `${base}/images/birla-mandir.png`,
+		href: `${base}/tours/mathura-vrindavan-1-day`,
 		prices: { sedan: '2000', ertiga: '2500', innova: '3000', traveller: '6000' },
 	},
 	{
 		title: 'Mathura Vrindavan 2 Day Sightseeing Tour',
-		image: '/images/iskcon-temple.png',
-		href: '/tours/mathura-vrindavan-2-day',
+		image: `${base}/images/iskcon-temple.png`,
+		href: `${base}/tours/mathura-vrindavan-2-day`,
 		prices: { sedan: '4500', ertiga: '5000', innova: '6500', traveller: '12000' },
 	},
 	{
 		title: 'Mathura Vrindavan 3 Day Sightseeing Tour',
-		image: '/images/govardhan.png',
-		href: '/tours/mathura-vrindavan-3-day',
+		image: `${base}/images/govardhan.png`,
+		href: `${base}/tours/mathura-vrindavan-3-day`,
 		prices: { sedan: '7000', ertiga: '8000', innova: '9500', traveller: '18000' },
 	},
 	{
 		title: 'Mathura Vrindavan Agra 3 Day Sightseeing Tour',
-		image: '/images/prem-mandir.png',
-		href: '/tours/mathura-vrindavan-agra-3-day',
+		image: `${base}/images/prem-mandir.png`,
+		href: `${base}/tours/mathura-vrindavan-agra-3-day`,
 		prices: { sedan: '7500', ertiga: '8000', innova: '10500', traveller: '18000' },
 	},
 	{
 		title: 'Agra 1 Day Sightseeing Tour from Mathura Vrindavan',
-		image: '/images/taj-mahal-arch.png',
-		href: '/tours/agra-tour',
+		image: `${base}/images/taj-mahal-arch.png`,
+		href: `${base}/tours/agra-tour`,
 		prices: { sedan: '2500', ertiga: '3000', innova: '4000', traveller: '6000' },
 	},
 	{
 		title: 'Agra Fatehpur Sikri 1 Day Sightseeing Tour',
-		image: '/images/taj-mahal.png',
-		href: '/tours/agra-fatehpur-sikri',
+		image: `${base}/images/taj-mahal.png`,
+		href: `${base}/tours/agra-fatehpur-sikri`,
 		prices: { sedan: '3500', ertiga: '4000', innova: '5000', traveller: '7500' },
 	},
 ];
@@ -43,62 +45,62 @@ const tourPackagesFromMathura = [
 const tourPackagesFromDelhi = [
 	{
 		title: 'Mathura Vrindavan 1 Day Tour from Delhi',
-		image: '/images/birla-mandir.png',
-		href: '/tours/delhi-mathura-vrindavan-1-day',
+		image: `${base}/images/birla-mandir.png`,
+		href: `${base}/tours/delhi-mathura-vrindavan-1-day`,
 		prices: { sedan: '4500', ertiga: '5500', innova: '7000', traveller: '12000' },
 	},
 	{
 		title: 'Mathura Vrindavan 2 Day Tour from Delhi',
-		image: '/images/iskcon-temple.png',
-		href: '/tours/delhi-mathura-vrindavan-2-day',
+		image: `${base}/images/iskcon-temple.png`,
+		href: `${base}/tours/delhi-mathura-vrindavan-2-day`,
 		prices: { sedan: '8000', ertiga: '9000', innova: '11000', traveller: '18000' },
 	},
 	{
 		title: 'Mathura Vrindavan 3 Day Tour from Delhi',
-		image: '/images/govardhan.png',
-		href: '/tours/delhi-mathura-vrindavan-3-day',
+		image: `${base}/images/govardhan.png`,
+		href: `${base}/tours/delhi-mathura-vrindavan-3-day`,
 		prices: { sedan: '11000', ertiga: '12000', innova: '15000', traveller: '24000' },
 	},
 	{
 		title: 'Agra Mathura Vrindavan 1 Day Tour from Delhi',
-		image: '/images/prem-mandir.png',
-		href: '/tours/delhi-agra-mathura-1-day',
+		image: `${base}/images/prem-mandir.png`,
+		href: `${base}/tours/delhi-agra-mathura-1-day`,
 		prices: { sedan: '5500', ertiga: '6500', innova: '8000', traveller: '14000' },
 	},
 	{
 		title: 'Agra Mathura Vrindavan 2 Day Tour from Delhi',
-		image: '/images/taj-mahal-arch.png',
-		href: '/tours/delhi-agra-mathura-2-day',
+		image: `${base}/images/taj-mahal-arch.png`,
+		href: `${base}/tours/delhi-agra-mathura-2-day`,
 		prices: { sedan: '9000', ertiga: '10000', innova: '12500', traveller: '20000' },
 	},
 	{
 		title: 'Agra Tour from Delhi',
-		image: '/images/taj-mahal.png',
-		href: '/tours/delhi-agra-tour',
+		image: `${base}/images/taj-mahal.png`,
+		href: `${base}/tours/delhi-agra-tour`,
 		prices: { sedan: '4000', ertiga: '5000', innova: '6500', traveller: '10000' },
 	},
 ];
 
 const vehicles = [
-	{ name: 'Sedan', price: '2,500', image: '/images/sedan.png' },
-	{ name: 'Ertiga', price: '2,700', image: '/images/ertiga.png' },
-	{ name: 'Innova Crysta', price: '4,000', image: '/images/innova-crysta.png' },
-	{ name: 'Traveller', price: '6,000', image: '/images/traveller.png' },
+	{ name: 'Sedan', price: '2,500', image: `${base}/images/sedan.png` },
+	{ name: 'Ertiga', price: '2,700', image: `${base}/images/ertiga.png` },
+	{ name: 'Innova Crysta', price: '4,000', image: `${base}/images/innova-crysta.png` },
+	{ name: 'Traveller', price: '6,000', image: `${base}/images/traveller.png` },
 ];
 
 const taxiRoutes = [
-	{ title: 'Vrindavan To Delhi Taxi', href: '/taxi/vrindavan-to-delhi' },
-	{ title: 'Mathura To Delhi Taxi', href: '/taxi/mathura-to-delhi' },
-	{ title: 'Delhi To Vrindavan Taxi', href: '/taxi/delhi-to-vrindavan' },
-	{ title: 'Delhi To Mathura Taxi', href: '/taxi/delhi-to-mathura' },
-	{ title: 'Mathura to Agra Taxi', href: '/taxi/mathura-to-agra' },
-	{ title: 'Vrindavan to Agra Taxi', href: '/taxi/vrindavan-to-agra' },
-	{ title: 'Agra To Vrindavan Taxi', href: '/taxi/agra-to-vrindavan' },
-	{ title: 'Agra To Mathura Taxi', href: '/taxi/agra-to-mathura' },
-	{ title: 'Mathura to Barsana Taxi', href: '/taxi/mathura-to-delhi' },
-	{ title: 'Vrindavan to Barsana Taxi', href: '/taxi/vrindavan-to-delhi' },
-	{ title: 'Mathura to Tundla Taxi', href: '/taxi/mathura-to-delhi' },
-	{ title: 'Mathura to Vrindavan Taxi', href: '/taxi/mathura-to-agra' },
+	{ title: 'Vrindavan To Delhi Taxi', href: `${base}/taxi/vrindavan-to-delhi` },
+	{ title: 'Mathura To Delhi Taxi', href: `${base}/taxi/mathura-to-delhi` },
+	{ title: 'Delhi To Vrindavan Taxi', href: `${base}/taxi/delhi-to-vrindavan` },
+	{ title: 'Delhi To Mathura Taxi', href: `${base}/taxi/delhi-to-mathura` },
+	{ title: 'Mathura to Agra Taxi', href: `${base}/taxi/mathura-to-agra` },
+	{ title: 'Vrindavan to Agra Taxi', href: `${base}/taxi/vrindavan-to-agra` },
+	{ title: 'Agra To Vrindavan Taxi', href: `${base}/taxi/agra-to-vrindavan` },
+	{ title: 'Agra To Mathura Taxi', href: `${base}/taxi/agra-to-mathura` },
+	{ title: 'Mathura to Barsana Taxi', href: `${base}/taxi/mathura-to-delhi` },
+	{ title: 'Vrindavan to Barsana Taxi', href: `${base}/taxi/vrindavan-to-delhi` },
+	{ title: 'Mathura to Tundla Taxi', href: `${base}/taxi/mathura-to-delhi` },
+	{ title: 'Mathura to Vrindavan Taxi', href: `${base}/taxi/mathura-to-agra` },
 ];
 ---
 
@@ -133,7 +135,7 @@ const taxiRoutes = [
 				<!-- Right: Image -->
 				<div class="relative">
 					<img 
-						src="/images/width-800.png" 
+						src={`${base}/images/width-800.png`} 
 						alt="Passengers enjoying Mathura Vrindavan tour" 
 						class="w-full rounded-2xl shadow-2xl"
 					/>

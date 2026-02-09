@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout 
@@ -52,11 +54,11 @@ import BaseLayout from '../components/BaseLayout.astro';
 				</div>
 			</div>
 
-			<a 
-				href="/" 
-				class="mt-8 inline-flex items-center gap-2 font-medium transition hover:opacity-80"
-				style="color: var(--primary);"
-			>
+		<a 
+			href={`${base}/`}
+			class="mt-8 inline-flex items-center gap-2 font-medium transition hover:opacity-80"
+			style="color: var(--primary);"
+		>
 				<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
 				</svg>

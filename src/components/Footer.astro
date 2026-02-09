@@ -1,18 +1,20 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const tourPackages = [
-	{ title: 'Mathura Vrindavan 1 Day Tour', href: '/tours/mathura-vrindavan-1-day' },
-	{ title: 'Mathura Vrindavan 2 Day Tour', href: '/tours/mathura-vrindavan-2-day' },
-	{ title: 'Mathura Vrindavan 3 Day Tour', href: '/tours/mathura-vrindavan-3-day' },
-	{ title: 'Mathura Vrindavan Agra 3 Day Tour', href: '/tours/mathura-vrindavan-agra-3-day' },
-	{ title: 'Agra 1 Day Tour', href: '/tours/agra-tour' },
-	{ title: 'Agra Fatehpur Sikri Tour', href: '/tours/agra-fatehpur-sikri' },
+	{ title: 'Mathura Vrindavan 1 Day Tour', href: `${base}/tours/mathura-vrindavan-1-day` },
+	{ title: 'Mathura Vrindavan 2 Day Tour', href: `${base}/tours/mathura-vrindavan-2-day` },
+	{ title: 'Mathura Vrindavan 3 Day Tour', href: `${base}/tours/mathura-vrindavan-3-day` },
+	{ title: 'Mathura Vrindavan Agra 3 Day Tour', href: `${base}/tours/mathura-vrindavan-agra-3-day` },
+	{ title: 'Agra 1 Day Tour', href: `${base}/tours/agra-tour` },
+	{ title: 'Agra Fatehpur Sikri Tour', href: `${base}/tours/agra-fatehpur-sikri` },
 ];
 
 const quickLinks = [
-	{ title: 'Home', href: '/' },
-	{ title: 'About Us', href: '/about' },
-	{ title: 'Contact', href: '/contact' },
-	{ title: 'Taxi Service', href: '/taxi/mathura-to-delhi' },
+	{ title: 'Home', href: `${base}/` },
+	{ title: 'About Us', href: `${base}/about` },
+	{ title: 'Contact', href: `${base}/contact` },
+	{ title: 'Taxi Service', href: `${base}/taxi/mathura-to-delhi` },
 ];
 ---
 
@@ -20,7 +22,7 @@ const quickLinks = [
 	<div class="mx-auto max-w-6xl px-4">
 		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 			<div>
-				<img src="/images/logo.png" alt="Braj Go" class="h-12 w-auto" />
+				<img src={`${base}/images/logo.png`} alt="Braj Go" class="h-12 w-auto" />
 				<p class="mt-4 text-sm text-white/70">
 					Your trusted partner for tours and taxi services in Mathura, Vrindavan & Agra.
 				</p>

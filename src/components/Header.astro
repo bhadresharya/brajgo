@@ -4,34 +4,35 @@ interface Props {
 }
 
 const { currentPath = '/' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const tourPackagesMathura = [
-	{ title: 'Mathura Vrindavan 1 Day Tour', href: '/tours/mathura-vrindavan-1-day' },
-	{ title: 'Mathura Vrindavan 2 Day Tour', href: '/tours/mathura-vrindavan-2-day' },
-	{ title: 'Mathura Vrindavan 3 Day Tour', href: '/tours/mathura-vrindavan-3-day' },
-	{ title: 'Mathura Vrindavan Agra 3 Day Tour', href: '/tours/mathura-vrindavan-agra-3-day' },
-	{ title: 'Agra Tour', href: '/tours/agra-tour' },
-	{ title: 'Agra Fatehpur Sikri Tour', href: '/tours/agra-fatehpur-sikri' },
+	{ title: 'Mathura Vrindavan 1 Day Tour', href: `${base}/tours/mathura-vrindavan-1-day` },
+	{ title: 'Mathura Vrindavan 2 Day Tour', href: `${base}/tours/mathura-vrindavan-2-day` },
+	{ title: 'Mathura Vrindavan 3 Day Tour', href: `${base}/tours/mathura-vrindavan-3-day` },
+	{ title: 'Mathura Vrindavan Agra 3 Day Tour', href: `${base}/tours/mathura-vrindavan-agra-3-day` },
+	{ title: 'Agra Tour', href: `${base}/tours/agra-tour` },
+	{ title: 'Agra Fatehpur Sikri Tour', href: `${base}/tours/agra-fatehpur-sikri` },
 ];
 
 const tourPackagesDelhi = [
-	{ title: 'Mathura Vrindavan 1 Day Tour from Delhi', href: '/tours/delhi-mathura-vrindavan-1-day' },
-	{ title: 'Mathura Vrindavan 2 Day Tour from Delhi', href: '/tours/delhi-mathura-vrindavan-2-day' },
-	{ title: 'Mathura Vrindavan 3 Day Tour from Delhi', href: '/tours/delhi-mathura-vrindavan-3-day' },
-	{ title: 'Agra Mathura Vrindavan 1 Day Tour from Delhi', href: '/tours/delhi-agra-mathura-1-day' },
-	{ title: 'Agra Mathura Vrindavan 2 Day Tour from Delhi', href: '/tours/delhi-agra-mathura-2-day' },
-	{ title: 'Agra Tour from Delhi', href: '/tours/delhi-agra-tour' },
+	{ title: 'Mathura Vrindavan 1 Day Tour from Delhi', href: `${base}/tours/delhi-mathura-vrindavan-1-day` },
+	{ title: 'Mathura Vrindavan 2 Day Tour from Delhi', href: `${base}/tours/delhi-mathura-vrindavan-2-day` },
+	{ title: 'Mathura Vrindavan 3 Day Tour from Delhi', href: `${base}/tours/delhi-mathura-vrindavan-3-day` },
+	{ title: 'Agra Mathura Vrindavan 1 Day Tour from Delhi', href: `${base}/tours/delhi-agra-mathura-1-day` },
+	{ title: 'Agra Mathura Vrindavan 2 Day Tour from Delhi', href: `${base}/tours/delhi-agra-mathura-2-day` },
+	{ title: 'Agra Tour from Delhi', href: `${base}/tours/delhi-agra-tour` },
 ];
 
 const taxiRoutes = [
-	{ title: 'Vrindavan To Delhi Taxi', href: '/taxi/vrindavan-to-delhi' },
-	{ title: 'Mathura To Delhi Taxi', href: '/taxi/mathura-to-delhi' },
-	{ title: 'Delhi To Vrindavan Taxi', href: '/taxi/delhi-to-vrindavan' },
-	{ title: 'Delhi To Mathura Taxi', href: '/taxi/delhi-to-mathura' },
-	{ title: 'Mathura to Agra Taxi', href: '/taxi/mathura-to-agra' },
-	{ title: 'Vrindavan to Agra Taxi', href: '/taxi/vrindavan-to-agra' },
-	{ title: 'Agra To Vrindavan Taxi', href: '/taxi/agra-to-vrindavan' },
-	{ title: 'Agra To Mathura Taxi', href: '/taxi/agra-to-mathura' },
+	{ title: 'Vrindavan To Delhi Taxi', href: `${base}/taxi/vrindavan-to-delhi` },
+	{ title: 'Mathura To Delhi Taxi', href: `${base}/taxi/mathura-to-delhi` },
+	{ title: 'Delhi To Vrindavan Taxi', href: `${base}/taxi/delhi-to-vrindavan` },
+	{ title: 'Delhi To Mathura Taxi', href: `${base}/taxi/delhi-to-mathura` },
+	{ title: 'Mathura to Agra Taxi', href: `${base}/taxi/mathura-to-agra` },
+	{ title: 'Vrindavan to Agra Taxi', href: `${base}/taxi/vrindavan-to-agra` },
+	{ title: 'Agra To Vrindavan Taxi', href: `${base}/taxi/agra-to-vrindavan` },
+	{ title: 'Agra To Mathura Taxi', href: `${base}/taxi/agra-to-mathura` },
 ];
 
 const isActive = (path: string) => currentPath === path;
@@ -42,8 +43,8 @@ const isInSection = (paths: string[]) => paths.some(p => currentPath.startsWith(
 	<div class="mx-auto max-w-6xl px-4 py-3">
 		<div class="flex items-center justify-between">
 			<!-- Logo -->
-			<a href="/" class="flex items-center gap-2 sm:gap-3">
-				<img src="/images/logo.png" alt="Braj Go" class="h-10 w-auto sm:h-12" />
+			<a href={`${base}/`} class="flex items-center gap-2 sm:gap-3">
+				<img src={`${base}/images/logo.png`} alt="Braj Go" class="h-10 w-auto sm:h-12" />
 				<div>
 					<span class="text-lg font-bold text-white sm:text-xl">Braj Go</span>
 					<span class="block text-[10px] text-white/80 sm:text-xs">Tours & Travels</span>
@@ -52,8 +53,8 @@ const isInSection = (paths: string[]) => paths.some(p => currentPath.startsWith(
 
 			<!-- Desktop Navigation -->
 			<nav class="hidden items-center gap-4 lg:flex">
-				<a href="/" class={`text-sm font-medium transition ${isActive('/') ? 'text-white' : 'text-white/90 hover:text-white'}`}>Home</a>
-				<a href="/about" class={`text-sm font-medium transition ${isActive('/about') ? 'text-white' : 'text-white/90 hover:text-white'}`}>About us</a>
+				<a href={`${base}/`} class={`text-sm font-medium transition ${isActive('/') ? 'text-white' : 'text-white/90 hover:text-white'}`}>Home</a>
+				<a href={`${base}/about`} class={`text-sm font-medium transition ${isActive('/about') ? 'text-white' : 'text-white/90 hover:text-white'}`}>About us</a>
 				
 				<!-- Tour Package from Mathura Dropdown -->
 				<div class="group relative">
@@ -91,7 +92,7 @@ const isInSection = (paths: string[]) => paths.some(p => currentPath.startsWith(
 					</div>
 				</div>
 				
-				<a href="/contact" class={`text-sm font-medium transition ${isActive('/contact') ? 'text-white' : 'text-white/90 hover:text-white'}`}>Contact</a>
+				<a href={`${base}/contact`} class={`text-sm font-medium transition ${isActive('/contact') ? 'text-white' : 'text-white/90 hover:text-white'}`}>Contact</a>
 			</nav>
 
 			<!-- Mobile Menu Button + CTA -->
@@ -126,8 +127,8 @@ const isInSection = (paths: string[]) => paths.some(p => currentPath.startsWith(
 	<nav id="mobile-menu" class="hidden border-t border-white/20 lg:hidden" style="background-color: var(--primary);">
 		<div class="mx-auto max-w-6xl px-4 py-4">
 			<div class="flex flex-col gap-2">
-				<a href="/" class={`rounded-lg px-4 py-2 text-sm font-medium ${isActive('/') ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'}`}>Home</a>
-				<a href="/about" class={`rounded-lg px-4 py-2 text-sm font-medium ${isActive('/about') ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'}`}>About us</a>
+				<a href={`${base}/`} class={`rounded-lg px-4 py-2 text-sm font-medium ${isActive('/') ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'}`}>Home</a>
+				<a href={`${base}/about`} class={`rounded-lg px-4 py-2 text-sm font-medium ${isActive('/about') ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'}`}>About us</a>
 				
 				<!-- Tour Packages from Mathura -->
 				<div class="mobile-dropdown">
@@ -174,7 +175,7 @@ const isInSection = (paths: string[]) => paths.some(p => currentPath.startsWith(
 					</div>
 				</div>
 				
-				<a href="/contact" class={`rounded-lg px-4 py-2 text-sm font-medium ${isActive('/contact') ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'}`}>Contact</a>
+				<a href={`${base}/contact`} class={`rounded-lg px-4 py-2 text-sm font-medium ${isActive('/contact') ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'}`}>Contact</a>
 			</div>
 		</div>
 	</nav>

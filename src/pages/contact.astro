@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import PageTitle from '../components/PageTitle.astro';
+
+const base = import.meta.env.BASE_URL;
+const siteUrl = import.meta.env.SITE || 'https://bhadresharya.github.io';
 ---
 
 <BaseLayout 
@@ -136,7 +139,7 @@ import PageTitle from '../components/PageTitle.astro';
 						<!-- Email Subject -->
 						<input type="hidden" name="subject" value="New Inquiry from Braj Go Website" />
 						<!-- Redirect after submission -->
-						<input type="hidden" name="redirect" value="/thank-you" />
+						<input type="hidden" name="redirect" value={`${siteUrl}${base}/thank-you`} />
 						<!-- Honeypot Spam Protection -->
 						<input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
