@@ -1,0 +1,48 @@
+---
+import TourPackage from '../../components/TourPackage.astro';
+---
+
+<TourPackage
+	title="Mathura Vrindavan 1 Day Tour | Braj Go Tours"
+	description="Explore Mathura and Vrindavan in a single day with our guided tour package. Visit Krishna Janmabhoomi, Banke Bihari Temple, ISKCON, and more."
+	subtitle="Experience the divine essence of Braj in one day"
+	image="/images/birla-mandir.png"
+	duration="1 Day Tour"
+	currentPath="/tours/mathura-vrindavan-1-day"
+	places={[
+		"Krishna Janmabhoomi",
+		"Dwarkadhish Temple",
+		"Vishram Ghat",
+		"Banke Bihari Temple",
+		"ISKCON Temple",
+		"Prem Mandir",
+		"Rangji Temple",
+		"Nidhivan"
+	]}
+	itinerary={[
+		{ time: "6:00 AM", activity: "Pick up from your location in Mathura/Vrindavan" },
+		{ time: "7:00 AM", activity: "Visit Krishna Janmabhoomi Temple - birthplace of Lord Krishna" },
+		{ time: "9:00 AM", activity: "Explore Dwarkadhish Temple and Vishram Ghat" },
+		{ time: "11:00 AM", activity: "Head to Vrindavan - Visit Banke Bihari Temple" },
+		{ time: "1:00 PM", activity: "Lunch break at a local restaurant" },
+		{ time: "2:30 PM", activity: "Visit ISKCON Temple and Prem Mandir" },
+		{ time: "4:30 PM", activity: "Explore Rangji Temple and Nidhivan" },
+		{ time: "6:00 PM", activity: "Evening aarti at Yamuna Ghat" },
+		{ time: "7:00 PM", activity: "Drop back to your location" }
+	]}
+	prices={{ sedan: "2,000", ertiga: "2,500", innova: "3,000", traveller: "6,000" }}
+	inclusions={[
+		"AC vehicle with experienced driver",
+		"Pick up and drop from your location",
+		"All parking and toll charges",
+		"Driver allowance",
+		"Unlimited kilometers within the tour"
+	]}
+	exclusions={[
+		"Temple entry fees (if any)",
+		"Meals and refreshments",
+		"Personal expenses",
+		"Boat ride charges",
+		"Guide charges (available on request)"
+	]}
+/>

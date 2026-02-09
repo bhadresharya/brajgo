@@ -1,0 +1,110 @@
+---
+interface Props {
+	currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const tourPackagesMathura = [
+	{ title: 'Mathura Vrindavan 1 Day Tour', href: '/tours/mathura-vrindavan-1-day' },
+	{ title: 'Mathura Vrindavan 2 Day Tour', href: '/tours/mathura-vrindavan-2-day' },
+	{ title: 'Mathura Vrindavan 3 Day Tour', href: '/tours/mathura-vrindavan-3-day' },
+	{ title: 'Mathura Vrindavan Agra 3 Day Tour', href: '/tours/mathura-vrindavan-agra-3-day' },
+	{ title: 'Agra Tour', href: '/tours/agra-tour' },
+	{ title: 'Agra Fatehpur Sikri Tour', href: '/tours/agra-fatehpur-sikri' },
+];
+
+const tourPackagesDelhi = [
+	{ title: 'Mathura Vrindavan 1 Day Tour from Delhi', href: '/tours/delhi-mathura-vrindavan-1-day' },
+	{ title: 'Mathura Vrindavan 2 Day Tour from Delhi', href: '/tours/delhi-mathura-vrindavan-2-day' },
+	{ title: 'Mathura Vrindavan 3 Day Tour from Delhi', href: '/tours/delhi-mathura-vrindavan-3-day' },
+	{ title: 'Agra Mathura Vrindavan 1 Day Tour from Delhi', href: '/tours/delhi-agra-mathura-1-day' },
+	{ title: 'Agra Mathura Vrindavan 2 Day Tour from Delhi', href: '/tours/delhi-agra-mathura-2-day' },
+	{ title: 'Agra Tour from Delhi', href: '/tours/delhi-agra-tour' },
+];
+
+const taxiRoutes = [
+	{ title: 'Vrindavan To Delhi Taxi', href: '/taxi/vrindavan-to-delhi' },
+	{ title: 'Mathura To Delhi Taxi', href: '/taxi/mathura-to-delhi' },
+	{ title: 'Delhi To Vrindavan Taxi', href: '/taxi/delhi-to-vrindavan' },
+	{ title: 'Delhi To Mathura Taxi', href: '/taxi/delhi-to-mathura' },
+	{ title: 'Mathura to Agra Taxi', href: '/taxi/mathura-to-agra' },
+	{ title: 'Vrindavan to Agra Taxi', href: '/taxi/vrindavan-to-agra' },
+	{ title: 'Agra To Vrindavan Taxi', href: '/taxi/agra-to-vrindavan' },
+	{ title: 'Agra To Mathura Taxi', href: '/taxi/agra-to-mathura' },
+];
+
+const isActive = (path: string) => currentPath === path;
+const isInSection = (paths: string[]) => paths.some(p => currentPath.startsWith(p));
+---
+
+<header class="sticky top-0 z-50 shadow-md" style="background-color: var(--primary);">
+	<div class="mx-auto max-w-6xl px-4 py-3">
+		<div class="flex items-center justify-between">
+			<!-- Logo -->
+			<a href="/" class="flex items-center gap-3">
+				<img src="/images/logo.png" alt="Braj Go" class="h-12 w-auto" />
+				<div class="hidden sm:block">
+					<span class="text-xl font-bold text-white">Braj Go</span>
+					<span class="block text-xs text-white/80">Tours & Travels</span>
+				</div>
+			</a>
+
+			<!-- Navigation -->
+			<nav class="hidden items-center gap-4 lg:flex">
+				<a href="/" class={`text-sm font-medium transition ${isActive('/') ? 'text-white' : 'text-white/90 hover:text-white'}`}>Home</a>
+				<a href="/about" class={`text-sm font-medium transition ${isActive('/about') ? 'text-white' : 'text-white/90 hover:text-white'}`}>About us</a>
+				
+				<!-- Tour Package from Mathura Dropdown -->
+				<div class="group relative">
+					<button class={`text-sm font-medium transition ${isInSection(['/tours/mathura', '/tours/agra-tour', '/tours/agra-fatehpur']) ? 'text-white' : 'text-white/90 hover:text-white'}`}>
+						Tour Package from Mathura ▾
+					</button>
+					<div class="absolute left-0 top-full hidden w-64 rounded-lg bg-white py-2 shadow-lg group-hover:block">
+						{tourPackagesMathura.map((item) => (
+							<a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item.title}</a>
+						))}
+					</div>
+				</div>
+				
+				<!-- Tour Package from Delhi Dropdown -->
+				<div class="group relative">
+					<button class={`text-sm font-medium transition ${isInSection(['/tours/delhi']) ? 'text-white' : 'text-white/90 hover:text-white'}`}>
+						Tour Package from Delhi ▾
+					</button>
+					<div class="absolute left-0 top-full hidden w-72 rounded-lg bg-white py-2 shadow-lg group-hover:block">
+						{tourPackagesDelhi.map((item) => (
+							<a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item.title}</a>
+						))}
+					</div>
+				</div>
+				
+				<!-- Taxi Service Dropdown -->
+				<div class="group relative">
+					<button class={`text-sm font-medium transition ${isInSection(['/taxi']) ? 'text-white' : 'text-white/90 hover:text-white'}`}>
+						Taxi Service ▾
+					</button>
+					<div class="absolute left-0 top-full hidden w-56 rounded-lg bg-white py-2 shadow-lg group-hover:block">
+						{taxiRoutes.map((item) => (
+							<a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item.title}</a>
+						))}
+					</div>
+				</div>
+				
+				<a href="/contact" class={`text-sm font-medium transition ${isActive('/contact') ? 'text-white' : 'text-white/90 hover:text-white'}`}>Contact</a>
+			</nav>
+
+			<!-- CTA -->
+			<a 
+				href="tel:9228597072" 
+				class="flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold text-white transition"
+				style="background-color: var(--accent);"
+			>
+				<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+				</svg>
+				<span class="hidden sm:inline">Call Now</span>
+			</a>
+		</div>
+	</div>
+</header>

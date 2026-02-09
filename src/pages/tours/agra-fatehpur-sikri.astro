@@ -1,0 +1,49 @@
+---
+import TourPackage from '../../components/TourPackage.astro';
+---
+
+<TourPackage
+	title="Agra Fatehpur Sikri Tour from Mathura | Braj Go Tours"
+	description="Explore Taj Mahal, Agra Fort, and the historic Fatehpur Sikri in a comprehensive day tour from Mathura or Vrindavan."
+	subtitle="Heritage trail - Mughal magnificence"
+	image="/images/taj-mahal.png"
+	duration="1 Day Tour"
+	currentPath="/tours/agra-fatehpur-sikri"
+	places={[
+		"Taj Mahal",
+		"Agra Fort",
+		"Fatehpur Sikri",
+		"Buland Darwaza",
+		"Salim Chishti Dargah",
+		"Panch Mahal"
+	]}
+	itinerary={[
+		{ time: "5:00 AM", activity: "Early morning pick up from Mathura/Vrindavan" },
+		{ time: "6:00 AM", activity: "Arrive at Taj Mahal for sunrise" },
+		{ time: "6:30 AM", activity: "Explore Taj Mahal" },
+		{ time: "9:00 AM", activity: "Breakfast" },
+		{ time: "10:00 AM", activity: "Visit Agra Fort" },
+		{ time: "12:00 PM", activity: "Drive to Fatehpur Sikri (40 km)" },
+		{ time: "1:00 PM", activity: "Lunch at Fatehpur Sikri" },
+		{ time: "2:00 PM", activity: "Explore Fatehpur Sikri complex" },
+		{ time: "2:30 PM", activity: "Visit Buland Darwaza - World's highest gateway" },
+		{ time: "3:30 PM", activity: "Salim Chishti Dargah and Panch Mahal" },
+		{ time: "5:00 PM", activity: "Return journey to Mathura" },
+		{ time: "7:00 PM", activity: "Drop at your location" }
+	]}
+	prices={{ sedan: "3,500", ertiga: "4,000", innova: "5,000", traveller: "7,500" }}
+	inclusions={[
+		"AC vehicle with experienced driver",
+		"Pick up and drop from Mathura/Vrindavan",
+		"All parking and toll charges",
+		"Driver allowance",
+		"Unlimited kilometers within the tour"
+	]}
+	exclusions={[
+		"Taj Mahal entry ticket (₹50 Indian / ₹1100 Foreign)",
+		"Agra Fort entry ticket (₹50 Indian / ₹650 Foreign)",
+		"Fatehpur Sikri entry ticket (₹50 Indian / ₹610 Foreign)",
+		"Meals and refreshments",
+		"Guide charges (available on request)"
+	]}
+/>

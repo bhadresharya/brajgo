@@ -1,0 +1,49 @@
+---
+import TourPackage from '../../components/TourPackage.astro';
+---
+
+<TourPackage
+	title="Agra Mathura Vrindavan 1 Day Tour from Delhi | Braj Go Tours"
+	description="Visit Taj Mahal, Agra Fort along with Mathura and Vrindavan temples in a single day tour from Delhi. Heritage meets spirituality."
+	subtitle="Taj Mahal and Braj in one day"
+	image="/images/prem-mandir.png"
+	duration="1 Day Tour from Delhi"
+	currentPath="/tours/delhi-agra-mathura-1-day"
+	places={[
+		"Taj Mahal",
+		"Agra Fort",
+		"Krishna Janmabhoomi",
+		"Banke Bihari Temple",
+		"ISKCON Temple"
+	]}
+	itinerary={[
+		{ time: "3:00 AM", activity: "Early pick up from Delhi" },
+		{ time: "5:30 AM", activity: "Arrive at Taj Mahal for sunrise" },
+		{ time: "6:00 AM", activity: "Explore Taj Mahal" },
+		{ time: "8:30 AM", activity: "Breakfast near Taj Mahal" },
+		{ time: "9:30 AM", activity: "Visit Agra Fort" },
+		{ time: "11:30 AM", activity: "Drive to Mathura (60 km)" },
+		{ time: "12:30 PM", activity: "Krishna Janmabhoomi Temple" },
+		{ time: "2:00 PM", activity: "Lunch" },
+		{ time: "3:00 PM", activity: "Drive to Vrindavan" },
+		{ time: "3:30 PM", activity: "Banke Bihari Temple" },
+		{ time: "5:00 PM", activity: "ISKCON Temple" },
+		{ time: "6:30 PM", activity: "Start return journey to Delhi" },
+		{ time: "10:00 PM", activity: "Drop at Delhi" }
+	]}
+	prices={{ sedan: "5,500", ertiga: "6,500", innova: "8,000", traveller: "14,000" }}
+	inclusions={[
+		"AC vehicle with experienced driver",
+		"Pick up and drop from Delhi",
+		"All toll taxes and parking charges",
+		"Driver allowance",
+		"Unlimited kilometers for the tour"
+	]}
+	exclusions={[
+		"Taj Mahal entry ticket (₹50 Indian / ₹1100 Foreign)",
+		"Agra Fort entry ticket (₹50 Indian / ₹650 Foreign)",
+		"Temple entry fees (if any)",
+		"Meals and refreshments",
+		"Guide charges"
+	]}
+/>

@@ -1,0 +1,46 @@
+---
+import TourPackage from '../../components/TourPackage.astro';
+---
+
+<TourPackage
+	title="Agra Tour from Delhi | Braj Go Tours"
+	description="Same day Agra tour from Delhi. Visit Taj Mahal, Agra Fort, and other Mughal monuments with comfortable round trip from Delhi."
+	subtitle="Delhi to Agra - Same day Taj Mahal tour"
+	image="/images/taj-mahal.png"
+	duration="1 Day Tour from Delhi"
+	currentPath="/tours/delhi-agra-tour"
+	places={[
+		"Taj Mahal",
+		"Agra Fort",
+		"Mehtab Bagh",
+		"Itmad-ud-Daulah (Baby Taj)"
+	]}
+	itinerary={[
+		{ time: "4:00 AM", activity: "Pick up from Delhi (your location/hotel)" },
+		{ time: "6:30 AM", activity: "Arrive at Taj Mahal for sunrise view" },
+		{ time: "7:00 AM", activity: "Explore Taj Mahal (2-3 hours)" },
+		{ time: "10:00 AM", activity: "Breakfast at local restaurant" },
+		{ time: "11:00 AM", activity: "Visit Agra Fort" },
+		{ time: "1:00 PM", activity: "Lunch break" },
+		{ time: "2:30 PM", activity: "Visit Itmad-ud-Daulah (Baby Taj)" },
+		{ time: "4:00 PM", activity: "Mehtab Bagh - Taj view from across river" },
+		{ time: "5:30 PM", activity: "Start return journey to Delhi" },
+		{ time: "9:00 PM", activity: "Drop at Delhi" }
+	]}
+	prices={{ sedan: "4,000", ertiga: "5,000", innova: "6,500", traveller: "10,000" }}
+	inclusions={[
+		"AC vehicle with experienced driver",
+		"Pick up and drop from Delhi",
+		"All toll taxes (Yamuna Expressway)",
+		"Parking charges",
+		"Driver allowance"
+	]}
+	exclusions={[
+		"Taj Mahal entry ticket (₹50 Indian / ₹1100 Foreign)",
+		"Agra Fort entry ticket (₹50 Indian / ₹650 Foreign)",
+		"Itmad-ud-Daulah entry ticket",
+		"Mehtab Bagh entry ticket",
+		"Meals and refreshments",
+		"Guide charges (available on request)"
+	]}
+/>

@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import FloatingCallButton from './FloatingCallButton.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	currentPath?: string;
+}
+
+const { title, description, currentPath = '/' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+		<style>
+			:root {
+				--primary: #F2A246;
+				--primary-dark: #C47F2A;
+				--primary-light: #FAD4A8;
+				--accent: #8B4513;
+				--bg-light: #FFFAF5;
+				--text-dark: #3D2512;
+				--text-gray: #6B5040;
+			}
+		</style>
+	</head>
+	<body class="font-sans antialiased" style="background-color: var(--bg-light); color: var(--text-dark);">
+		<Header currentPath={currentPath} />
+		<slot />
+		<Footer />
+		<FloatingCallButton />
+	</body>
+</html>

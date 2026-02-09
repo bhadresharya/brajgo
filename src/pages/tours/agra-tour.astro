@@ -1,0 +1,47 @@
+---
+import TourPackage from '../../components/TourPackage.astro';
+---
+
+<TourPackage
+	title="Agra 1 Day Tour from Mathura | Braj Go Tours"
+	description="Visit the magnificent Taj Mahal, Agra Fort, and other Agra attractions in a single day tour from Mathura or Vrindavan."
+	subtitle="Witness the wonder of the world - Taj Mahal"
+	image="/images/taj-mahal-arch.png"
+	duration="1 Day Tour"
+	currentPath="/tours/agra-tour"
+	places={[
+		"Taj Mahal",
+		"Agra Fort",
+		"Mehtab Bagh",
+		"Itmad-ud-Daulah",
+		"Kinari Bazaar"
+	]}
+	itinerary={[
+		{ time: "5:30 AM", activity: "Early morning pick up from Mathura/Vrindavan" },
+		{ time: "6:30 AM", activity: "Arrive at Taj Mahal for sunrise view" },
+		{ time: "7:00 AM", activity: "Explore Taj Mahal (2-3 hours)" },
+		{ time: "10:00 AM", activity: "Breakfast at local restaurant" },
+		{ time: "11:00 AM", activity: "Visit Agra Fort" },
+		{ time: "1:00 PM", activity: "Lunch break" },
+		{ time: "2:30 PM", activity: "Visit Itmad-ud-Daulah (Baby Taj)" },
+		{ time: "4:00 PM", activity: "Shopping at Kinari Bazaar" },
+		{ time: "5:00 PM", activity: "Mehtab Bagh - Taj view from across Yamuna" },
+		{ time: "6:30 PM", activity: "Return to Mathura/Vrindavan" },
+		{ time: "7:30 PM", activity: "Drop at your location" }
+	]}
+	prices={{ sedan: "2,500", ertiga: "3,000", innova: "4,000", traveller: "6,000" }}
+	inclusions={[
+		"AC vehicle with experienced driver",
+		"Pick up and drop from Mathura/Vrindavan",
+		"All parking and toll charges",
+		"Driver allowance",
+		"Unlimited kilometers within the tour"
+	]}
+	exclusions={[
+		"Taj Mahal entry ticket (₹50 Indian / ₹1100 Foreign)",
+		"Agra Fort entry ticket (₹50 Indian / ₹650 Foreign)",
+		"Other monument entry fees",
+		"Meals and refreshments",
+		"Guide charges (available on request)"
+	]}
+/>
