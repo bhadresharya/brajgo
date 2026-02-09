@@ -2,7 +2,7 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import PageTitle from '../components/PageTitle.astro';
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = import.meta.env.SITE || 'https://bhadresharya.github.io';
 ---
 

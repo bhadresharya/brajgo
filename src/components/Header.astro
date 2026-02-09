@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { currentPath = '/' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const tourPackagesMathura = [
 	{ title: 'Mathura Vrindavan 1 Day Tour', href: `${base}/tours/mathura-vrindavan-1-day` },

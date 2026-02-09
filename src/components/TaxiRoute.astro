@@ -16,7 +16,7 @@ interface Props {
 }
 
 const { title, description, subtitle, from, to, distance, duration, prices, highlights, currentPath } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title={title} description={description} currentPath={currentPath}>
