@@ -88,6 +88,13 @@ const vehicles = [
 	{ name: 'Traveller', price: '8,500', image: `${base}/images/traveller.png` },
 ];
 
+const heroSlides = [
+	{ src: `${base}/images/width-800.jpg`, alt: 'Mathura Vrindavan tour' },
+	{ src: `${base}/images/prem-mandir.jpg`, alt: 'Prem Mandir Vrindavan' },
+	{ src: `${base}/images/taj-mahal-arch.jpg`, alt: 'Taj Mahal Agra' },
+	{ src: `${base}/images/govardhan.jpg`, alt: 'Govardhan' },
+];
+
 const taxiRoutes = [
 	{ title: 'Airport Taxi Service', href: `${base}/taxi/airport-taxi` },
 	{ title: 'Vrindavan To Delhi Taxi', href: `${base}/taxi/vrindavan-to-delhi` },
@@ -133,46 +140,26 @@ const taxiRoutes = [
 						CALL NOW FOR BOOKING
 					</a>
 				</div>
-				<!-- Right: Image with overlay, zoom, floating cards -->
+				<!-- Right: Hero carousel -->
 				<div class="hero-animate hero-animate-delay-4 relative">
-					<div class="hero-image-wrap group relative overflow-hidden rounded-2xl shadow-2xl">
-						<img 
-							src={`${base}/images/width-800.jpg`} 
-							alt="Passengers enjoying Mathura Vrindavan tour" 
-							class="hero-image-img w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-						/>
-						<!-- Gradient overlay (teal tint bottom-right) -->
-						<div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-tl from-[var(--primary)]/20 via-transparent to-transparent" aria-hidden="true"></div>
-						<!-- Hover overlay + CTA -->
-						<div class="hero-image-overlay absolute inset-0 flex items-center justify-center rounded-2xl bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-							<button 
-								type="button"
-								data-enquiry-source="Home - Hero"
-								class="rounded-full px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-xl"
-								style="background-color: var(--primary);"
-							>
-								Send Enquiry
-							</button>
+					<div class="hero-carousel relative overflow-hidden rounded-2xl shadow-2xl" id="hero-carousel">
+						<div class="hero-carousel-track flex transition-transform duration-500 ease-out" id="hero-carousel-track">
+							{heroSlides.map((slide) => (
+								<div class="hero-carousel-slide min-w-full">
+									<img src={slide.src} alt={slide.alt} class="w-full object-cover" width="800" height="450" />
+								</div>
+							))}
 						</div>
-						<!-- Floating cards -->
-						<a 
-							href={`${base}/taxi/airport-taxi`} 
-							class="hero-float-card hero-float-1 absolute left-4 bottom-4 flex items-center gap-2 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm transition hover:scale-105 hover:shadow-xl"
-						>
-							<svg class="h-5 w-5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
-							<span class="text-sm font-semibold" style="color: var(--text-dark);">Airport Taxi</span>
-						</a>
-						<button 
-							type="button"
-							data-enquiry-source="Home - Delhi to Mathura"
-							class="hero-float-card hero-float-2 absolute right-4 top-4 flex items-center gap-2 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm transition hover:scale-105 hover:shadow-xl"
-						>
-							<svg class="h-5 w-5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-							<span class="text-sm font-semibold" style="color: var(--text-dark);">Delhi → Mathura</span>
+						<button type="button" class="hero-carousel-btn absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white" id="hero-carousel-prev" aria-label="Previous slide">
+							<svg class="h-5 w-5" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
 						</button>
-						<div class="hero-float-card hero-float-3 absolute right-4 bottom-4 flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur-sm">
-							<svg class="h-5 w-5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-							<span class="text-sm font-semibold" style="color: var(--text-dark);">24/7 Service</span>
+						<button type="button" class="hero-carousel-btn absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white" id="hero-carousel-next" aria-label="Next slide">
+							<svg class="h-5 w-5" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+						</button>
+						<div class="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2" id="hero-carousel-dots">
+							{heroSlides.map((_, i) => (
+								<button type="button" class="hero-carousel-dot h-2 w-2 rounded-full bg-white/80 transition hover:bg-white" data-index={i} aria-label={`Go to slide ${i + 1}`} />
+							))}
 						</div>
 					</div>
 				</div>
@@ -181,17 +168,50 @@ const taxiRoutes = [
 	</section>
 
 	<style>
-		.hero-image-wrap { min-height: 280px; }
-		@media (min-width: 1024px) { .hero-image-wrap { min-height: 340px; } }
-		.hero-float-card { animation: heroFloatIn 0.6s ease-out both; }
-		.hero-float-1 { animation-delay: 0.7s; }
-		.hero-float-2 { animation-delay: 0.85s; }
-		.hero-float-3 { animation-delay: 1s; }
-		@keyframes heroFloatIn {
-			from { opacity: 0; transform: translateY(12px); }
-			to { opacity: 1; transform: translateY(0); }
-		}
+		.hero-carousel { min-height: 280px; }
+		@media (min-width: 1024px) { .hero-carousel { min-height: 340px; } }
+		.hero-carousel-slide img { width: 100%; height: 280px; object-fit: cover; }
+		@media (min-width: 1024px) { .hero-carousel-slide img { height: 340px; } }
+		.hero-carousel-dot.active { background: var(--primary); transform: scale(1.25); }
 	</style>
+	<script>
+		(function () {
+			const track = document.getElementById('hero-carousel-track');
+			const prevBtn = document.getElementById('hero-carousel-prev');
+			const nextBtn = document.getElementById('hero-carousel-next');
+			const dotsEl = document.getElementById('hero-carousel-dots');
+			if (!track || !prevBtn || !nextBtn) return;
+			const slides = track.querySelectorAll('.hero-carousel-slide');
+			const total = slides.length;
+			if (total === 0) return;
+			let index = 0;
+			let autoTimer = null;
+			const AUTO_MS = 4500;
+			function goTo(i) {
+				index = ((i % total) + total) % total;
+				track.style.transform = `translateX(-${index * 100}%)`;
+				dotsEl?.querySelectorAll('.hero-carousel-dot').forEach((dot, j) => dot.classList.toggle('active', j === index));
+			}
+			function startAuto() {
+				stopAuto();
+				autoTimer = setInterval(() => goTo(index + 1), AUTO_MS);
+			}
+			function stopAuto() { if (autoTimer) clearInterval(autoTimer); autoTimer = null; }
+			prevBtn.addEventListener('click', () => { goTo(index - 1); startAuto(); });
+			nextBtn.addEventListener('click', () => { goTo(index + 1); startAuto(); });
+			dotsEl?.addEventListener('click', (e) => {
+				const dot = e.target.closest('.hero-carousel-dot');
+				if (dot && dot.dataset.index != null) { goTo(parseInt(dot.dataset.index, 10)); startAuto(); }
+			});
+			const carousel = document.getElementById('hero-carousel');
+			if (carousel) {
+				carousel.addEventListener('mouseenter', stopAuto);
+				carousel.addEventListener('mouseleave', startAuto);
+			}
+			goTo(0);
+			startAuto();
+		})();
+	</script>
 
 	<!-- Route teaser (map-style) -->
 	<section class="py-10 sm:py-14" style="background-color: var(--bg-light);">
