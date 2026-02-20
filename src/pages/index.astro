@@ -95,6 +95,13 @@ const heroSlides = [
 	{ src: `${base}/images/govardhan.jpg`, alt: 'Govardhan' },
 ];
 
+const heroHeadlines = [
+	'Your journey to the land of Krishna starts here.',
+	'From Delhi to Mathura — one comfortable ride.',
+	'Airport pickup. Temple drop. Zero hassle.',
+	'Explore Braj. One taxi, endless memories.',
+];
+
 const taxiRoutes = [
 	{ title: 'Airport Taxi Service', href: `${base}/taxi/airport-taxi` },
 	{ title: 'Vrindavan To Delhi Taxi', href: `${base}/taxi/vrindavan-to-delhi` },
@@ -120,28 +127,26 @@ const taxiRoutes = [
 	<!-- Hero Section -->
 	<section class="bg-white py-16 sm:py-20 lg:py-28">
 		<div class="mx-auto max-w-7xl px-4">
-			<div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+			<div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
 				<!-- Left: Text Content -->
 				<div>
-					<h1 class="hero-animate hero-animate-delay-1 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl" style="color: var(--text-dark);">
-						Taxi Service in Mathura and Vrindavan.
+					<h1 class="hero-typewriter-headline hero-animate hero-animate-delay-1 text-4xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl" style="color: var(--text-dark);" data-typewriter-headings={JSON.stringify(heroHeadlines)}>
+						<span id="hero-typewriter-text"></span><span class="hero-typewriter-cursor" aria-hidden="true">|</span>
 					</h1>
 					<p class="hero-animate hero-animate-delay-2 mt-8 text-xl font-medium leading-relaxed sm:text-2xl" style="color: var(--text-gray);">
 						Book Your Taxi in Mathura and Vrindavan with Braj Go Tours and Travels at Very Best Rates And Best Service Guaranteed
 					</p>
-					<a 
-						href="tel:+918923897072" 
-						class="hero-animate hero-animate-delay-3 hero-cta mt-10 inline-flex items-center gap-3 rounded-full px-10 py-5 text-xl font-bold text-white transition sm:px-12 sm:py-6 sm:text-2xl"
-						style="background-color: var(--primary);"
-					>
-						<svg class="h-6 w-6 sm:h-7 sm:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-						</svg>
-						CALL NOW FOR BOOKING
-					</a>
+					<div class="hero-animate hero-animate-delay-2 mt-5 flex flex-wrap items-center gap-4 text-sm" style="color: var(--text-gray);">
+						<span class="inline-flex items-center gap-1">
+							<span class="text-amber-500" aria-hidden="true">★★★★★</span>
+							<span>Rated 4.9 by 500+ travelers</span>
+						</span>
+						<span class="text-gray-300">|</span>
+						<span>Trusted by pilgrims &amp; tourists</span>
+					</div>
 				</div>
 				<!-- Right: Hero carousel -->
-				<div class="hero-animate hero-animate-delay-4 relative">
+				<div class="hero-animate hero-animate-delay-4 relative text-center">
 					<div class="hero-carousel relative overflow-hidden rounded-2xl shadow-2xl" id="hero-carousel">
 						<div class="hero-carousel-track flex transition-transform duration-500 ease-out" id="hero-carousel-track">
 							{heroSlides.map((slide) => (
@@ -162,6 +167,16 @@ const taxiRoutes = [
 							))}
 						</div>
 					</div>
+					<a 
+						href="tel:+918923897072" 
+						class="hero-animate hero-animate-delay-3 hero-cta mt-10 inline-flex items-center gap-3 rounded-full px-10 py-5 text-xl font-bold text-white transition sm:px-12 sm:py-6 sm:text-2xl"
+						style="background-color: var(--primary);"
+					>
+						<svg class="h-6 w-6 sm:h-7 sm:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+						</svg>
+						CALL NOW FOR BOOKING
+					</a>
 				</div>
 			</div>
 		</div>
@@ -173,6 +188,11 @@ const taxiRoutes = [
 		.hero-carousel-slide img { width: 100%; height: 280px; object-fit: cover; }
 		@media (min-width: 1024px) { .hero-carousel-slide img { height: 340px; } }
 		.hero-carousel-dot.active { background: var(--primary); transform: scale(1.25); }
+		.hero-typewriter-cursor { animation: hero-cursor-blink 1s step-end infinite; }
+		@keyframes hero-cursor-blink { 50% { opacity: 0; } }
+		.hero-typewriter-headline { min-height: 2.2em; }
+		@media (min-width: 640px) { .hero-typewriter-headline { min-height: 3.4em; } }
+		@media (min-width: 1024px) { .hero-typewriter-headline { min-height: 3.6em; } }
 	</style>
 	<script>
 		(function () {
@@ -210,6 +230,48 @@ const taxiRoutes = [
 			}
 			goTo(0);
 			startAuto();
+		})();
+	</script>
+	<script>
+		(function () {
+			const h1 = document.querySelector('[data-typewriter-headings]');
+			const el = document.getElementById('hero-typewriter-text');
+			if (!h1 || !el) return;
+			let headings = [];
+			try {
+				headings = JSON.parse(h1.getAttribute('data-typewriter-headings') || '[]');
+			} catch (_) {}
+			if (headings.length === 0) return;
+			const typeSpeed = 80;
+			const deleteSpeed = 45;
+			const pauseAfterType = 2200;
+			const pauseAfterDelete = 500;
+			let headingIndex = 0;
+			function type() {
+				const text = headings[headingIndex];
+				let i = 0;
+				function addChar() {
+					if (i < text.length) {
+						el.textContent += text[i];
+						i++;
+						setTimeout(addChar, typeSpeed);
+					} else {
+						setTimeout(erase, pauseAfterType);
+					}
+				}
+				addChar();
+			}
+			function erase() {
+				const cur = el.textContent;
+				if (cur.length === 0) {
+					headingIndex = (headingIndex + 1) % headings.length;
+					setTimeout(type, pauseAfterDelete);
+					return;
+				}
+				el.textContent = cur.slice(0, -1);
+				setTimeout(erase, deleteSpeed);
+			}
+			type();
 		})();
 	</script>
 
