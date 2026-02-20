@@ -1,0 +1,96 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const siteUrl = import.meta.env.SITE || 'https://bhadresharya.github.io';
+---
+
+<div id="enquiry-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="enquiry-modal-title">
+	<div class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-xl" id="enquiry-modal-content">
+		<button type="button" id="enquiry-modal-close" class="absolute right-4 top-4 rounded-full p-1 text-gray-500 transition hover:bg-gray-100 hover:text-gray-700" aria-label="Close">
+			<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+		</button>
+		<div class="p-6 sm:p-8">
+			<h2 id="enquiry-modal-title" class="text-xl font-bold" style="color: var(--text-dark);">Send Enquiry</h2>
+			<p id="enquiry-source-label" class="mt-1 text-sm" style="color: var(--text-gray);"></p>
+			<form action="https://api.web3forms.com/submit" method="POST" class="mt-6 space-y-4" id="enquiry-form">
+				<input type="hidden" name="access_key" value="ac1c5656-f73d-4e06-90aa-a3a74c15e749" />
+				<input type="hidden" name="subject" value="New Inquiry from Braj Go Website" />
+				<input type="hidden" name="redirect" value={`${siteUrl}${base}/thank-you`} />
+				<input type="hidden" name="botcheck" class="hidden" />
+				<input type="hidden" name="enquiry_source" id="enquiry-source-input" value="" />
+
+				<div>
+					<label for="enquiry-name" class="block text-sm font-medium" style="color: var(--text-dark);">Full Name</label>
+					<input type="text" id="enquiry-name" name="name" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary);" placeholder="Your name" />
+				</div>
+				<div>
+					<label for="enquiry-phone" class="block text-sm font-medium" style="color: var(--text-dark);">Phone Number</label>
+					<input type="tel" id="enquiry-phone" name="phone" required class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary);" placeholder="Your phone number" />
+				</div>
+				<div>
+					<label for="enquiry-service" class="block text-sm font-medium" style="color: var(--text-dark);">Service Required</label>
+					<select id="enquiry-service" name="service" class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary);">
+						<option value="">Select a service</option>
+						<option value="Local Taxi Service">Local Taxi Service</option>
+						<option value="Mathura Vrindavan Tour">Mathura Vrindavan Tour</option>
+						<option value="Agra Tour">Agra Tour</option>
+						<option value="Tour from Delhi">Tour from Delhi</option>
+						<option value="Outstation Trip">Outstation Trip</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+				<div>
+					<label for="enquiry-message" class="block text-sm font-medium" style="color: var(--text-dark);">Message</label>
+					<textarea id="enquiry-message" name="message" rows="4" class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-transparent focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary);" placeholder="Tell us about your travel plans..."></textarea>
+				</div>
+				<button type="submit" class="w-full rounded-lg py-3 font-bold text-white transition hover:opacity-90" style="background-color: var(--primary);">Send Enquiry</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	const modal = document.getElementById('enquiry-modal');
+	const content = document.getElementById('enquiry-modal-content');
+	const closeBtn = document.getElementById('enquiry-modal-close');
+	const sourceInput = document.getElementById('enquiry-source-input');
+	const sourceLabel = document.getElementById('enquiry-source-label');
+
+	function openModal(source) {
+		if (!modal || !sourceInput) return;
+		sourceInput.value = source || '';
+		sourceLabel.textContent = source ? `Enquiry regarding: ${source}` : '';
+		modal.classList.remove('hidden');
+		modal.classList.add('flex');
+		document.body.style.overflow = 'hidden';
+		document.getElementById('enquiry-name')?.focus();
+	}
+
+	function closeModal() {
+		if (!modal) return;
+		modal.classList.add('hidden');
+		modal.classList.remove('flex');
+		document.body.style.overflow = '';
+	}
+
+	document.addEventListener('click', (e) => {
+		const btn = e.target.closest('[data-enquiry-source]');
+		if (btn) {
+			e.preventDefault();
+			openModal(btn.getAttribute('data-enquiry-source') || '');
+		}
+	});
+
+	window.addEventListener('open-enquiry', (e) => {
+		openModal(e.detail?.source || '');
+	});
+
+	closeBtn?.addEventListener('click', closeModal);
+	modal?.addEventListener('click', (e) => {
+		if (e.target === modal) closeModal();
+	});
+	content?.addEventListener('click', (e) => e.stopPropagation());
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && modal?.classList.contains('flex')) closeModal();
+	});
+</script>
