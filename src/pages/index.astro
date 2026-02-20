@@ -133,16 +133,120 @@ const taxiRoutes = [
 						CALL NOW FOR BOOKING
 					</a>
 				</div>
-				<!-- Right: Image -->
+				<!-- Right: Image with overlay, zoom, floating cards -->
 				<div class="hero-animate hero-animate-delay-4 relative">
-					<img 
-						src={`${base}/images/width-800.jpg`} 
-						alt="Passengers enjoying Mathura Vrindavan tour" 
-						class="w-full rounded-2xl shadow-2xl"
-					/>
+					<div class="hero-image-wrap group relative overflow-hidden rounded-2xl shadow-2xl">
+						<img 
+							src={`${base}/images/width-800.jpg`} 
+							alt="Passengers enjoying Mathura Vrindavan tour" 
+							class="hero-image-img w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+						/>
+						<!-- Gradient overlay (teal tint bottom-right) -->
+						<div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-tl from-[var(--primary)]/20 via-transparent to-transparent" aria-hidden="true"></div>
+						<!-- Hover overlay + CTA -->
+						<div class="hero-image-overlay absolute inset-0 flex items-center justify-center rounded-2xl bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+							<button 
+								type="button"
+								data-enquiry-source="Home - Hero"
+								class="rounded-full px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-xl"
+								style="background-color: var(--primary);"
+							>
+								Send Enquiry
+							</button>
+						</div>
+						<!-- Floating cards -->
+						<a 
+							href={`${base}/taxi/airport-taxi`} 
+							class="hero-float-card hero-float-1 absolute left-4 bottom-4 flex items-center gap-2 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm transition hover:scale-105 hover:shadow-xl"
+						>
+							<svg class="h-5 w-5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
+							<span class="text-sm font-semibold" style="color: var(--text-dark);">Airport Taxi</span>
+						</a>
+						<button 
+							type="button"
+							data-enquiry-source="Home - Delhi to Mathura"
+							class="hero-float-card hero-float-2 absolute right-4 top-4 flex items-center gap-2 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm transition hover:scale-105 hover:shadow-xl"
+						>
+							<svg class="h-5 w-5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+							<span class="text-sm font-semibold" style="color: var(--text-dark);">Delhi → Mathura</span>
+						</button>
+						<div class="hero-float-card hero-float-3 absolute right-4 bottom-4 flex items-center gap-2 rounded-xl bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur-sm">
+							<svg class="h-5 w-5 shrink-0" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+							<span class="text-sm font-semibold" style="color: var(--text-dark);">24/7 Service</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<style>
+		.hero-image-wrap { min-height: 280px; }
+		@media (min-width: 1024px) { .hero-image-wrap { min-height: 340px; } }
+		.hero-float-card { animation: heroFloatIn 0.6s ease-out both; }
+		.hero-float-1 { animation-delay: 0.7s; }
+		.hero-float-2 { animation-delay: 0.85s; }
+		.hero-float-3 { animation-delay: 1s; }
+		@keyframes heroFloatIn {
+			from { opacity: 0; transform: translateY(12px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+	</style>
+
+	<!-- Route teaser (map-style) -->
+	<section class="py-10 sm:py-14" style="background-color: var(--bg-light);">
+		<div class="mx-auto max-w-5xl px-4">
+			<h2 class="text-center text-xl font-bold sm:text-2xl" style="color: var(--primary);">
+				Popular routes we cover
+			</h2>
+			<p class="mx-auto mt-2 max-w-xl text-center text-sm" style="color: var(--text-gray);">
+				Delhi, Mathura, Vrindavan & Agra — we’ve got you covered
+			</p>
+			<div class="route-teaser mt-8 overflow-hidden rounded-2xl bg-white p-6 shadow-lg sm:p-8">
+				<svg class="route-teaser-svg w-full" viewBox="0 0 640 140" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+					<!-- Route path (dashed line connecting cities) -->
+					<path id="route-path" d="M 40 70 Q 180 30 320 70 T 600 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 6" class="route-dash" style="color: var(--primary-light);" />
+					<!-- Invisible path for car motion (same geometry) -->
+					<path id="route-path-solid" d="M 40 70 Q 180 30 320 70 T 600 70" stroke="none" fill="none" />
+					<!-- Animated car (drawn behind city icons) -->
+					<g>
+						<animateMotion dur="15s" repeatCount="indefinite" rotate="auto">
+							<mpath href="#route-path-solid" xlink:href="#route-path-solid" />
+						</animateMotion>
+						<image href={`${base}/images/sedan.png`} x="-14" y="-10" width="28" height="20" preserveAspectRatio="xMidYMid meet" transform="scale(-1, 1)" />
+					</g>
+					<!-- City nodes: images on the route (on top so car goes behind) -->
+					<g class="route-node">
+						<image href={`${base}/images/gate-of-india-mumbai-svgrepo-com.svg`} x="24" y="50" width="32" height="40" preserveAspectRatio="xMidYMid meet" />
+						<text x="40" y="105" text-anchor="middle" class="route-label">Delhi</text>
+					</g>
+					<g class="route-node">
+						<image href={`${base}/images/hindu-temple-svgrepo-com-2.svg`} x="184" y="24" width="32" height="40" preserveAspectRatio="xMidYMid meet" />
+						<text x="200" y="100" text-anchor="middle" class="route-label">Mathura</text>
+					</g>
+					<g class="route-node">
+						<image href={`${base}/images/hindu-temple-svgrepo-com.svg`} x="344" y="50" width="32" height="40" preserveAspectRatio="xMidYMid meet" />
+						<text x="360" y="105" text-anchor="middle" class="route-label">Vrindavan</text>
+					</g>
+					<g class="route-node">
+						<image href={`${base}/images/taj-mahal-india-svgrepo-com.svg`} x="584" y="50" width="32" height="40" preserveAspectRatio="xMidYMid meet" />
+						<text x="600" y="105" text-anchor="middle" class="route-label">Agra</text>
+					</g>
+				</svg>
+				<div class="mt-4 flex flex-wrap justify-center gap-4 text-sm">
+					<a href={`${base}/taxi/delhi-to-mathura`} class="font-medium hover:underline" style="color: var(--primary);">Delhi → Mathura</a>
+					<a href={`${base}/taxi/mathura-to-delhi`} class="font-medium hover:underline" style="color: var(--primary);">Mathura → Delhi</a>
+					<a href={`${base}/taxi/mathura-to-agra`} class="font-medium hover:underline" style="color: var(--primary);">Mathura → Agra</a>
+					<a href={`${base}/taxi/airport-taxi`} class="font-medium hover:underline" style="color: var(--primary);">Airport taxi</a>
+				</div>
+			</div>
+		</div>
+		<style>
+			.route-teaser-svg text { font-size: 14px; font-family: system-ui, sans-serif; }
+			.route-label { font-weight: 700; fill: var(--text-dark); }
+			.route-dash { animation: routeDash 1.2s linear infinite; }
+			@keyframes routeDash { to { stroke-dashoffset: -14; } }
+		</style>
 	</section>
 
 	<!-- Tour Packages from Mathura Section -->
