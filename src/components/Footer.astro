@@ -1,5 +1,6 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Gokul+Bairaj+Road+beside+Laxmi+Garden+Township+Mathura+Uttar+Pradesh+India';
 
 const tourPackages = [
 	{ title: 'Mathura Vrindavan 1 Day Tour', href: `${base}/tours/mathura-vrindavan-1-day` },
@@ -53,7 +54,7 @@ const quickLinks = [
 					<li>Call: +91 89238 97072</li>
 					<li><a href="mailto:dheerendrasingh7072@gmail.com" class="hover:text-white">dheerendrasingh7072@gmail.com</a></li>
 					<li>WhatsApp: +91 84391 91284</li>
-					<li>Gokul, Bairaj Road, beside Laxmi Garden Township, Mathura</li>
+					<li><a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white">Gokul, Bairaj Road, beside Laxmi Garden Township, Mathura</a></li>
 				</ul>
 			</div>
 		</div>
