@@ -104,6 +104,15 @@ const heroHeadlines = [
 	'Explore Braj. One taxi, endless memories.',
 ];
 
+const taxiServiceAreas = [
+	{ title: 'Mathura Taxi Service', description: 'Local sightseeing, temple visits, and outstation trips from Mathura. Pick-up from railway station, hotel, or Krishna Janmabhoomi. Delhi, Agra, and Braj circuit tours.' },
+	{ title: 'Vrindavan Taxi Service', description: 'Taxi in Vrindavan for Banke Bihari, ISKCON, Prem Mandir, and other dhams. Same-day tours, multi-day packages, and cab hire for pilgrims and tourists.' },
+	{ title: 'Govardhan Taxi Service', description: 'Govardhan parikrama and hill darshan by taxi. Comfortable AC vehicles for Giriraj ji parikrama and nearby Braj sites. Pick-up from Mathura or Vrindavan.' },
+	{ title: 'Barsana Taxi Service', description: 'Barsana and Nandgaon taxi for Radha Rani and Nanda Baba temples. Day trips from Mathura/Vrindavan. Ideal for Braj Yatra and festival visits.' },
+	{ title: 'Agra Taxi Service', description: 'Taj Mahal, Agra Fort, and Fatehpur Sikri by taxi. One-way or round trip from Mathura, Vrindavan, or Delhi. Same-day Agra tour and airport transfers.' },
+	{ title: 'Nandgaon Taxi Service', description: 'Nandgaon taxi for Nanda Bhavan and Braj sightseeing. Often combined with Barsana. Reliable cab service for pilgrims and groups.' },
+];
+
 const taxiRoutes = [
 	{ title: 'Airport Taxi Service', href: `${base}/taxi/airport-taxi` },
 	{ title: 'Vrindavan To Delhi Taxi', href: `${base}/taxi/vrindavan-to-delhi` },
@@ -406,59 +415,27 @@ const taxiRoutes = [
 	<!-- Taxi Service Info Section -->
 	<section class="py-12 sm:py-16" style="background-color: var(--bg-light);">
 		<div class="mx-auto max-w-6xl px-4">
-			<div class="grid gap-8 lg:grid-cols-2">
-				<div>
-					<h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--primary);">
-						Taxi Service in Mathura
-					</h2>
-					<p class="mt-4 leading-relaxed" style="color: var(--text-gray);">
-						Taxi Service in Mathura Vrindavan: Explore the spiritual heartland with ease! Our taxi service in Mathura offers a range of vehicles including cabs, buses, and travelers for your journeys within Mathura, Vrindavan, and outstation tours. Book your ride today!
-					</p>
-
-					<h3 class="mt-8 text-xl font-bold" style="color: var(--primary);">
-						Mathura Taxi Service
-					</h3>
-					<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
-						We offer taxi services in Mathura for local sightseeing, outstation trips, and Mathura to Delhi taxi rides. We've got you covered. Sit back, relax, and enjoy a seamless travel experience with Braj Go Tours and Travels.
-					</p>
-
-					<h3 class="mt-8 text-xl font-bold" style="color: var(--primary);">
-						Vrindavan Taxi Service
-					</h3>
-					<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
-						We offer taxi services in Vrindavan for local sightseeing, outstation trips, and Vrindavan to Delhi taxi rides. We've got you covered. Sit back, relax, and enjoy a seamless travel experience with Braj Go Tours and Travels.
-					</p>
-
-					<h3 class="mt-8 text-xl font-bold" style="color: var(--primary);">
-						Taxi in Mathura
-					</h3>
-					<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
-						Taxi Service in Mathura: Planning a tour of Mathura and Vrindavan, an outstation trip, or in need of a bus or Tempo Traveller? Look no further! Contact us for all your transportation needs. We provide reliable taxi services in Mathura to ensure a seamless travel experience. Reach out to us today for your Mathura-Vrindavan tour or any other travel requirements.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-xl font-bold" style="color: var(--primary);">
-						Mathura Travels
-					</h3>
-					<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
-						Mathura Travels: Braj Go Tours and Travels is your go-to travel agency in Mathura, offering a range of transportation options for your convenience. From buses and Tempo Travellers to cars, we cater to all your travel needs for exploring Mathura, Vrindavan, and beyond. Need a taxi for Agra, Jaipur, Delhi, Haridwar, Bharatpur, or Rishikesh? Look no further. Choose Braj Go Tours and Travels for a seamless and enjoyable journey.
-					</p>
-
-					<h3 class="mt-8 text-xl font-bold" style="color: var(--primary);">
-						Vrindavan Tour and Travels
-					</h3>
-					<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
-						Vrindavan Tour and Travels: Explore the spiritual wonders of Vrindavan, Mathura, Nandgaon, Barsana, and Govardhan with our top-notch taxi services for sightseeing. Whether you're looking to tour locally or venture outstation, we offer a fleet of buses, cars, and Tempo Travellers to cater to all your travel needs.
-					</p>
-
-					<h3 class="mt-8 text-xl font-bold" style="color: var(--primary);">
-						Mathura Taxi
-					</h3>
-					<p class="mt-3 leading-relaxed" style="color: var(--text-gray);">
-						We provide reliable taxi services in Mathura for locals and tourists, offering well-maintained vehicles and experienced drivers for safe and comfortable travel around the city and nearby attractions.
-					</p>
-				</div>
+			<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary);">
+				Taxi Services We Offer
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-center" style="color: var(--text-gray);">
+				Reliable cab and taxi service across Mathura, Vrindavan, Govardhan, Barsana, Agra, and the Braj region. Send an enquiry for rates and booking.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{taxiServiceAreas.map((area) => (
+					<div class="rounded-xl bg-white p-6 shadow transition hover:shadow-lg" style="border-left: 4px solid var(--primary);">
+						<h3 class="text-lg font-bold" style="color: var(--primary);">{area.title}</h3>
+						<p class="mt-3 text-sm leading-relaxed" style="color: var(--text-gray);">{area.description}</p>
+						<button 
+							type="button"
+							data-enquiry-source={`Home - ${area.title}`}
+							class="mt-4 rounded-lg px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+							style="background-color: var(--primary);"
+						>
+							Send Enquiry
+						</button>
+					</div>
+				))}
 			</div>
 		</div>
 	</section>
