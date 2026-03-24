@@ -35,17 +35,46 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				</div>
 				<div class="relative">
 					<img 
-						src={`${base}/images/prem-mandir.jpg`} 
-						alt="Prem Mandir Vrindavan" 
-						class="w-full rounded-2xl shadow-xl"
+						src={`${base}/images/about6.JPG`} 
+						alt="Braj Go Tours and Travels" 
+						class="w-full rounded-2xl object-cover shadow-xl aspect-[4/3] lg:aspect-auto lg:min-h-[320px]"
 					/>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Why Choose Us -->
+	<!-- Owners -->
 	<section class="py-12 sm:py-16" style="background-color: var(--bg-light);">
+		<div class="mx-auto max-w-6xl px-4">
+			<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary);">
+				Meet our team
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-center" style="color: var(--text-gray);">
+				The people behind Braj Go Tours and Travels — dedicated to making your Braj yatra comfortable and memorable.
+			</p>
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{[
+					{ file: 'about1.JPG', alt: 'Braj Go Tours owners' },
+					{ file: 'about3.JPG', alt: 'Braj Go Tours owners' },
+					{ file: 'about4.JPG', alt: 'Braj Go Tours owners' },
+					{ file: 'about5.JPG', alt: 'Braj Go Tours owners' },
+				].map((photo) => (
+					<div class="overflow-hidden rounded-2xl shadow-lg">
+						<img
+							src={`${base}/images/${photo.file}`}
+							alt={photo.alt}
+							class="aspect-[4/3] h-full w-full object-cover"
+							loading="lazy"
+						/>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Us -->
+	<section class="py-12 sm:py-16" style="background-color: white;">
 		<div class="mx-auto max-w-6xl px-4">
 			<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary);">
 				Why Choose Us?
@@ -138,7 +167,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 	</section>
 
 	<!-- Our Services -->
-	<section class="py-12 sm:py-16" style="background-color: white;">
+	<section class="py-12 sm:py-16" style="background-color: var(--bg-light);">
 		<div class="mx-auto max-w-6xl px-4">
 			<h2 class="text-center text-2xl font-bold sm:text-3xl" style="color: var(--primary);">
 				Our Services

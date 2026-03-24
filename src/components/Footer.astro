@@ -1,6 +1,13 @@
 ---
+import {
+	facebookUrl,
+	googleReviewUrl,
+	instagramUrl,
+	mapsPlaceUrl,
+	officeAddressLines,
+} from '../constants/site';
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Gokul+Bairaj+Road+beside+Laxmi+Garden+Township+Mathura+Uttar+Pradesh+India';
 
 const tourPackages = [
 	{ title: 'Mathura Vrindavan 1 Day Tour', href: `${base}/tours/mathura-vrindavan-1-day` },
@@ -28,6 +35,13 @@ const quickLinks = [
 				<p class="mt-4 text-sm text-white/70">
 					Your trusted partner for tours and taxi services in Mathura, Vrindavan & Agra.
 				</p>
+				<div class="mt-4 flex flex-wrap gap-3 text-sm">
+					<a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" aria-label="Instagram">Instagram</a>
+					<span class="text-white/40" aria-hidden="true">·</span>
+					<a href={facebookUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" aria-label="Facebook">Facebook</a>
+					<span class="text-white/40" aria-hidden="true">·</span>
+					<a href={googleReviewUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white">Review us on Google</a>
+				</div>
 			</div>
 
 			<div>
@@ -54,7 +68,7 @@ const quickLinks = [
 					<li>Call: +91 88825 85969</li>
 					<li><a href="mailto:dheerendrasingh7072@gmail.com" class="hover:text-white">dheerendrasingh7072@gmail.com</a></li>
 					<li>WhatsApp: +91 89238 97072</li>
-					<li><a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white">Gokul, Bairaj Road, beside Laxmi Garden Township, Mathura</a></li>
+					<li><a href={mapsPlaceUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white">{officeAddressLines}</a></li>
 				</ul>
 			</div>
 		</div>

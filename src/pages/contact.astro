@@ -1,11 +1,18 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import PageTitle from '../components/PageTitle.astro';
+import {
+	facebookUrl,
+	googleReviewUrl,
+	instagramUrl,
+	mapsEmbedUrl,
+	mapsIframeTitle,
+	mapsPlaceUrl,
+	officeAddressFull,
+} from '../constants/site';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = import.meta.env.SITE || 'https://bhadresharya.github.io';
-const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Gokul+Bairaj+Road+beside+Laxmi+Garden+Township+Mathura+Uttar+Pradesh+India';
-const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.46!2d77.6969!3d27.4924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bfac039%3A0x9e786f7d6928e7b!2sMathura%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin';
 ---
 
 <BaseLayout 
@@ -87,8 +94,27 @@ const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532
 							</div>
 							<div>
 								<h3 class="font-bold" style="color: var(--text-dark);">Address</h3>
-								<p class="mt-1" style="color: var(--text-gray);">
-									<a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Gokul, Bairaj Road, beside Laxmi Garden Township, Mathura<br>Uttar Pradesh, India</a>
+								<p class="mt-1 whitespace-pre-line" style="color: var(--text-gray);">
+									<a href={mapsPlaceUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">{officeAddressFull}</a>
+								</p>
+							</div>
+						</div>
+
+						<!-- Social -->
+						<div class="flex items-start gap-4">
+							<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full" style="background-color: var(--primary-light);">
+								<svg class="h-6 w-6" style="color: var(--primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+								</svg>
+							</div>
+							<div>
+								<h3 class="font-bold" style="color: var(--text-dark);">Follow us</h3>
+								<p class="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm" style="color: var(--text-gray);">
+									<a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+									<span class="text-gray-300">·</span>
+									<a href={facebookUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Facebook</a>
+									<span class="text-gray-300">·</span>
+									<a href={googleReviewUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Review on Google</a>
 								</p>
 							</div>
 						</div>
@@ -228,6 +254,36 @@ const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532
 		</div>
 	</section>
 
+	<!-- Hotel booking -->
+	<section id="hotel-booking" class="py-12 sm:py-16" style="background-color: var(--bg-light);">
+		<div class="mx-auto max-w-3xl px-4 text-center">
+			<h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--primary);">
+				Hotel booking in Mathura &amp; Vrindavan
+			</h2>
+			<p class="mx-auto mt-4 max-w-xl" style="color: var(--text-gray);">
+				Need a stay in Mathura or Vrindavan? Tell us your dates and budget — we&apos;ll help you find suitable hotels and guest houses.
+			</p>
+			<div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+				<a
+					href="tel:+918882585969"
+					class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 font-bold text-white transition hover:opacity-90"
+					style="background-color: var(--primary);"
+				>
+					Call +91 88825 85969
+				</a>
+				<a
+					href="https://wa.me/918923897072?text=Hi%2C%20I%27d%20like%20help%20booking%20a%20hotel%20in%20Mathura%20or%20Vrindavan."
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 font-bold text-white transition hover:opacity-90"
+					style="background-color: #25D366;"
+				>
+					WhatsApp for hotels
+				</a>
+			</div>
+		</div>
+	</section>
+
 	<!-- Map Section -->
 	<section class="py-12 sm:py-16" style="background-color: var(--bg-light);">
 		<div class="mx-auto max-w-6xl px-4">
@@ -246,11 +302,11 @@ const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532
 					allowfullscreen="" 
 					loading="lazy" 
 					referrerpolicy="no-referrer-when-downgrade"
-					title="Braj Go Tours and Travels - Gokul, Bairaj Road, Mathura"
+					title={mapsIframeTitle}
 				></iframe>
 			</div>
 			<p class="mt-4 text-center text-sm" style="color: var(--text-gray);">
-				<a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="font-medium hover:underline" style="color: var(--primary);">Open in Google Maps →</a>
+				<a href={mapsPlaceUrl} target="_blank" rel="noopener noreferrer" class="font-medium hover:underline" style="color: var(--primary);">Open in Google Maps →</a>
 			</p>
 		</div>
 	</section>

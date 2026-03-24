@@ -13,9 +13,31 @@ interface Props {
 	prices: { sedan: string; ertiga: string; innova: string; traveller: string };
 	highlights: string[];
 	currentPath: string;
+	/** When set, show a link to contact for hotel help in that city */
+	hotelBookingCity?: 'Mathura' | 'Vrindavan';
 }
 
-const { title, description, subtitle, from, to, distance, duration, highlights, currentPath } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const {
+	title,
+	description,
+	subtitle,
+	from,
+	to,
+	distance,
+	duration,
+	highlights,
+	currentPath,
+	hotelBookingCity,
+} = Astro.props;
+
+const hotelContactHref = hotelBookingCity ? `${base}/contact#hotel-booking` : undefined;
+const hotelContactLabel =
+	hotelBookingCity === 'Mathura'
+		? 'Hotel booking in Mathura — contact us'
+		: hotelBookingCity === 'Vrindavan'
+			? 'Hotel booking in Vrindavan — contact us'
+			: '';
 ---
 
 <BaseLayout title={title} description={description} currentPath={currentPath}>
@@ -65,7 +87,7 @@ const { title, description, subtitle, from, to, distance, duration, highlights, 
 					</div>
 
 					<!-- Send Enquiry / Call / WhatsApp -->
-					<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+					<div class="mt-8 flex flex-col flex-wrap gap-3 sm:flex-row">
 						<button 
 							type="button"
 							data-enquiry-source={`Taxi: ${from} to ${to}`}
@@ -90,6 +112,15 @@ const { title, description, subtitle, from, to, distance, duration, highlights, 
 						>
 							WhatsApp
 						</a>
+						{hotelContactHref && (
+							<a
+								href={hotelContactHref}
+								class="inline-flex items-center justify-center gap-2 rounded-full border-2 px-6 py-3 font-bold transition hover:opacity-90 sm:w-full sm:max-w-none lg:w-auto"
+								style="border-color: var(--primary); color: var(--primary);"
+							>
+								{hotelContactLabel}
+							</a>
+						)}
 					</div>
 				</div>
 

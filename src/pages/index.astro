@@ -1,9 +1,13 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import {
+	mapsEmbedUrl,
+	mapsIframeTitle,
+	mapsPlaceUrl,
+	officeAddressLines,
+} from '../constants/site';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Gokul+Bairaj+Road+beside+Laxmi+Garden+Township+Mathura+Uttar+Pradesh+India';
-const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.46!2d77.6969!3d27.4924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bfac039%3A0x9e786f7d6928e7b!2sMathura%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin';
 
 const tourPackagesFromMathura = [
 	{
@@ -517,7 +521,7 @@ const taxiRoutes = [
 						</svg>
 					</div>
 					<h3 class="mt-4 font-bold">Address</h3>
-					<p class="mt-1 text-sm text-white/80"><a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Gokul, Bairaj Road, beside Laxmi Garden Township, Mathura</a></p>
+					<p class="mt-1 text-sm text-white/80"><a href={mapsPlaceUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">{officeAddressLines}</a></p>
 				</div>
 				<div>
 					<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/20">
@@ -558,11 +562,11 @@ const taxiRoutes = [
 					allowfullscreen="" 
 					loading="lazy" 
 					referrerpolicy="no-referrer-when-downgrade"
-					title="Braj Go Tours and Travels Location - Mathura"
+					title={mapsIframeTitle}
 				></iframe>
 			</div>
 			<p class="mt-3 text-center text-sm text-white/80">
-				<a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Open in Google Maps →</a>
+				<a href={mapsPlaceUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Open in Google Maps →</a>
 			</p>
 
 			<a 
